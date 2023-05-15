@@ -41,8 +41,8 @@ vi_etchosts() {
 }
 #4.自动安装nastool、TR、jellyfin、TMM
 docker() {
-	rm -rf ./04_docker.sh wget https://wuzhuwei.work/upload/sh/nas/04_docker.sh && chmod 777 ./04_docker.sh && bash ./04_docker.sh
-	rm -rf ./04_docker2.sh wget https://wuzhuwei.work/upload/sh/nas/04_docker2.sh && chmod 777 ./04_docker2.sh
+	rm -rf ./04_docker.sh && wget https://wuzhuwei.work/upload/sh/nas/04_docker.sh && chmod 777 ./04_docker.sh && bash ./04_docker.sh
+	rm -rf ./04_docker2.sh && wget https://wuzhuwei.work/upload/sh/nas/04_docker2.sh && chmod 777 ./04_docker2.sh
 }
 #5.核显ls /dev/dri
 hexian() {
