@@ -1,0 +1,2 @@
+https://wuzhuwei.work/upload/sh/nas/00_nas.sh
+https://wuzhuwei.work/upload/sh/nas/02_vi_hosts.sh
