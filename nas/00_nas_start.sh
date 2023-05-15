@@ -29,7 +29,7 @@ else
     read -p "输入 IP 地址1: " ip_address1
     read -p "输入 IP 地址2: " ip_address2
     echo -e "\n$ip_address1 api.themoviedb.org \n$ip_address2 api.themoviedb.org" >> /etc/hosts&green
-    yellow "--> hosts文件已修改完成!"
+    yellow "恭喜，hosts文件已修改完成!"
 fi
 green "=================文件查看===================="
 cat /etc/hosts
