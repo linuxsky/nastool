@@ -12,3 +12,4 @@ yellow "显示所有容器"
 docker ps -a  
 yellow "显示所有镜像"  
 docker images
+yellow "============================="  
