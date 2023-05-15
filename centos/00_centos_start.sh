@@ -83,7 +83,7 @@ fanghuoqiang() {
 }
 #99.删除所有docker容器和镜像
 rm_images_container() {
-    bash <(curl https://gitee.com/juway111/nastool/raw/master/centos/99_rm_images_container.sh)
+    bash <(curl https://gitee.com/juway111/nastool/raw/master/99_rm_images_container.sh)
 }
 
 mylinux=$(cat /etc/redhat-release)
