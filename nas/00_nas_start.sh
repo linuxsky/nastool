@@ -77,13 +77,12 @@ echo -e "
 2.添加api.themoviedb.org到hosts文件
 3.手动编辑hosts文件
 4.自动安装nastool、TR、jellyfin、TMM
-5.安装qb-8989
-6.检测本设备是否支持核显硬件解码\033[0m
+5.检测本设备是否支持核显硬件解码\033[0m
 \033[31m99.删除所有docker容器和镜像(谨慎选择)\033[0m
 \033[32m0.退出脚本\033[0m
 ======================================================"
 
-read -p  " 请输入以上数字[0-4]查看系统相应信息: " num 
+read -p  " 请输入以上数字[0-5]查看系统相应信息: " num 
 if [  $num  == 1  ] ; then
 chaipv4
 elif [  $num  == 2  ]; then
@@ -93,8 +92,6 @@ vi_etchosts
 elif [  $num  == 4  ]; then
 docker
 elif [  $num  == 5  ]; then
-qb
-elif [  $num  == 6  ]; then
 hexian
 elif [  $num  == 99  ]; then
 rm_images_container
@@ -102,8 +99,8 @@ elif [  $num  == 0  ]; then
 red " 我们下次再见，拜拜"
 exit
 else
-red "请输入正确的数字，启动对应功能[0-4]: " 
-yellow "请输入正确的数字，启动对应功能[0-4]: " 
-green "请输入正确的数字，启动对应功能[0-4]: " 
+red "请输入正确的数字，启动对应功能[0-5]: " 
+yellow "请输入正确的数字，启动对应功能[0-5]: " 
+green "请输入正确的数字，启动对应功能[0-5]: " 
 fi
 bash <(curl https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh)
