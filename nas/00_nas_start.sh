@@ -38,7 +38,6 @@ cat /etc/hosts
 #3.手动修改hosts文件
 vi_etchosts() {
     vi /etc/hosts
-    bash ./00_nas.sh
 }
 #4.自动安装nastool、TR、jellyfin、TMM
 docker() {
