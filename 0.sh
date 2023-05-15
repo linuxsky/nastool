@@ -16,11 +16,11 @@ if which wget > /dev/null 2>&1
 then  
 #1.查看本机ipv4公网IP
 nas() {
-    rm -rf ./00_nas.sh && wget https://wuzhuwei.work/upload/sh/nas/00_nas.sh && chmod 777 ./00_nas.sh && bash ./00_nas.sh
+    rm -rf ./00_nas.sh && wget https://gitee.com/juway111/nastool/raw/master//nas/00_nas.sh && chmod 777 ./00_nas.sh && bash ./00_nas.sh
 }
 #2.自动修改hosts文件
 centos() {
- bash <(curl https://wuzhuwei.work/upload/sh/centos/0.sh)
+ bash <(curl https://gitee.com/juway111/nastool/raw/master//centos/0.sh)
 }
 #内存使用率
 my_mem=$(free | awk '/^Mem:/{print $3/$2 * 100.0 "%"}')
