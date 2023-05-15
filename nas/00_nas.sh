@@ -42,12 +42,12 @@ vi_etchosts() {
 }
 #4.自动安装nastool、TR、jellyfin、TMM
 docker() {
-	wget https://wuzhuwei.work/upload/sh/nas/04_docker.sh && chmod 777 ./04_docker.sh && bash ./04_docker.sh
-	wget https://wuzhuwei.work/upload/sh/nas/04_docker2.sh && chmod 777 ./04_docker2.sh
+	wget https://gitee.com/juway111/nastool/raw/master/nas/04_docker.sh && chmod 777 ./04_docker.sh && bash ./04_docker.sh
+	wget https://gitee.com/juway111/nastool/raw/master/nas/04_docker2.sh && chmod 777 ./04_docker2.sh
 }
 #5.安装qb-8989
 qb() {
-  rm -rf ./05_qb.sh && wget https://wuzhuwei.work/upload/sh/nas/05_qb.sh && chmod 777 ./05_qb.sh && bash ./05_qb.sh ; rm -rf ./05_qb.sh
+  rm -rf ./05_qb.sh && wget https://gitee.com/juway111/nastool/raw/master/nas/05_qb.sh && chmod 777 ./05_qb.sh && bash ./05_qb.sh ; rm -rf ./05_qb.sh
 }
 #6.核显ls /dev/dri
 06_hexian() {
@@ -63,7 +63,7 @@ fi
 }
 #99.删除所有docker容器和镜像
 rm_images_container() {
-    bash <(curl https://wuzhuwei.work/upload/sh/99_rm_images_container.sh)
+    bash <(curl https://gitee.com/juway111/nastool/raw/master/99_rm_images_container.sh)
 }
 
 #内存使用率
