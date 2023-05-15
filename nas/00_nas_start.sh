@@ -31,9 +31,9 @@ else
     echo -e "\n$ip_address1 api.themoviedb.org \n$ip_address2 api.themoviedb.org" >> /etc/hosts&green
     yellow "--> hosts文件已修改完成!"
 fi
-"=================文件查看===================="
+green "=================文件查看===================="
 cat /etc/hosts
-"=================运行结束===================="
+green "=================运行结束===================="
 }
 #3.手动修改hosts文件
 vi_etchosts() {
