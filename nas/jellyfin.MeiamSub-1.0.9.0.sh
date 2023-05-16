@@ -18,6 +18,7 @@ yellow "请确认目录是否正确"
 read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 if [ -d "$ip_address1/@appdata/Jellyfin/data/plugins/configurations/" ]; then
     yellow "检查目录存在，可以安装字幕插件"
+    chmod -R 777 $ip_address1/@appdata/Jellyfin/data/plugins/configurations
     rm -rf jellyfin.MeiamSub-1.0.9.0.tar.gz
     else
     yellow "目录不存在，请检查套件是否正确安装！"
