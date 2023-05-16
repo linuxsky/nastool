@@ -40,6 +40,7 @@ tar -zxf jellyfin.MeiamSub-1.0.9.0.tar.gz -C $ip_address1/@appdata/Jellyfin/data
 if [ -d "$ip_address1/@appdata/Jellyfin/data/plugins/configurations/MeiamSub.Shooter" -o -d "$ip_address1/@appdata/Jellyfin/data/plugins/configurations/MeiamSub.Thunder" ]; then
     yellow "解压缩成功，文件已经存储$ip_address1/@appdata/Jellyfin/data/plugins/configurations中"
     rm -rf jellyfin.MeiamSub-1.0.9.0.tar.gz
+    chmod -R 775 $ip_address1/@appdata/Jellyfin/data/plugins/configurations
     else
     yellow "解压失败，终止任务！"
     exit 1
