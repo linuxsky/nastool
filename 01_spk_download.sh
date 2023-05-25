@@ -25,6 +25,8 @@ if [ $y = "y" ];then
 # 检测是否下载
 if [ -f /volume$ip_address1/$ip_address2/nastool_2.9.1_x64-DSM7.spk ]; then
     yellow "下载已完成！"
+    echo "#!/bin/bash
+rm -rf /volume$ip_address1/$ip_address2/nastool_2.9.1_x64-DSM7.spk" >> rm_spk.sh
 else
     yellow "下载失败，终止任务！"
     exit 1
@@ -36,7 +38,10 @@ else
     echo "输入非法指令"
 fi
 }
-
+#0.清除缓存
+rm_sh() {
+  rm -rf rm_spk.sh && chmod 777 rm_spk.sh && bash rm_spk.sh && rm -rf rm_spk.sh
+}
 echo " ===================================================== "
 green "
 1.下载NasTool_v2.9套件
