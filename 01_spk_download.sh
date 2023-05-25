@@ -30,7 +30,7 @@ else
 fi
 elif [ $y = "n" ];then
   red "目录设置错误，请重新设置！"
-  bash 04_docker.sh
+  bash <(curl https://gitee.com/juway111/nastool/raw/master/01_spk_download.sh)
 else
     echo "输入非法指令"
 fi
