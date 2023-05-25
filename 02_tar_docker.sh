@@ -31,11 +31,12 @@ fi
 # 解压缩文件到docker目录
 tar -zxf /volume$ip_address1/$ip_address2/docker.tar.gz -C /volume$ip_address1/$ip_address2/dockerdown
 # 输出解压缩成功的提示
-if [ -d "/volume$ip_address1/$ip_address2/nastool" ]; then
+if [ -d "/volume$ip_address1/$ip_address2/dockerdown/nastool" ]; then
     yellow "解压缩成功，文件已经存储/dockerdown目录中"
     rm -rf /volume$ip_address1/$ip_address2/docker.tar.gz
     yellow "已下载，已清除缓存..."
     else
+    rm -rf /volume$ip_address1/$ip_address2/docker.tar.gz
     yellow "解压失败，终止任务！"
     exit 1
 fi
