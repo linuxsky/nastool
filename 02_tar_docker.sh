@@ -33,6 +33,7 @@ tar -zxf /volume$ip_address1/$ip_address2/docker.tar.gz -C /volume$ip_address1/$
 if [ -d "/volume$ip_address1/$ip_address2/nastool" ]; then
     yellow "解压缩成功，文件已经存储下载目录中"
     rm -rf /volume$ip_address1/$ip_address2/docker.tar.gz
+    yellow "已下载，已清除缓存..."
     else
     yellow "解压失败，终止任务！"
     exit 1
@@ -42,12 +43,4 @@ elif [ $y = "n" ];then
   bash <(curl https://gitee.com/juway111/nastool/raw/master/02_tar_docker.sh)
 else
     echo "输入非法指令"
-fi
-#0.清除缓存
-yellow "已下载，等待清除缓存..."
-read -p "按 Y 清除缓存 ：" y
-if [ $y = "y" ];then
-    rm -rf /volume$ip_address1/$ip_address2/docker.tar.gz
-else
-exit 1
 fi
