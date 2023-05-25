@@ -27,6 +27,7 @@ if [ -f /volume$ip_address1/$ip_address2/nastool_2.9.1_x64-DSM7.spk ]; then
     yellow "下载已完成！"
     echo "#!/bin/bash
 rm -rf /volume$ip_address1/$ip_address2/nastool_2.9.1_x64-DSM7.spk" >> rm_spk.sh
+    bash <(curl https://gitee.com/juway111/nastool/raw/master/01_spk_download.sh)
 else
     yellow "下载失败，终止任务！"
     exit 1
