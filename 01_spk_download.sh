@@ -15,14 +15,14 @@ nastool() {
 read -p "请输入下载目录: " ip_address1
 # 确认目录是否正确
 green "==================================================="
-echo -e "你输入的docker目录为: \033[33m$ip_address1\033[0m"
+echo -e "你输入的下载目录为: \033[33m$ip_address1\033[0m"
 yellow "请确认目录是否正确"
 read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 # 下载文件
 if [ $y = "y" ];then
-    rm -rf nastool_2.9.1_x64-DSM7.spk && wget -c https://wuzhuwei.work/upload/sh/nastool_2.9.1_x64-DSM7.spk -O $ip_address1/nastool_2.9.1_x64-DSM7.spk
+    rm -rf nastool_2.9.1_x64-DSM7.spk && wget -c https://d.nastool.work/d/%E9%98%BF%E9%87%8C%E7%BD%91%E7%9B%98/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5/1.%E6%B8%B8%E5%AE%A2%E4%B8%8B%E8%BD%BD/SSH%E5%B7%A5%E5%85%B7/SSH%E5%B7%A5%E5%85%B7-%E5%88%86%E7%A6%BB%E5%A4%87%E4%BB%BD/nastool_2.9.1_x64-DSM7.spk -O $ip_address1/nastool_2.9.1_x64-DSM7.spk
 # 检测是否下载
-if [ -f nastool_2.9.1_x64-DSM7.spk ]; then
+if [ -f $ip_address1/nastool_2.9.1_x64-DSM7.spk ]; then
     yellow "下载已完成！"
 else
     yellow "下载失败，终止任务！"
