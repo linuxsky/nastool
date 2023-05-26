@@ -26,10 +26,12 @@ centos() {
 # 3.查看docker整体磁盘使用率
 df() {
     docker system df
+    bash <(curl https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
 }
 # 4.删除未被任何容器使用的本地卷
 prune() {
     docker volume prune
+    bash <(curl https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
 }
 
 #内存使用率
