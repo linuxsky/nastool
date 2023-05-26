@@ -24,11 +24,11 @@ centos() {
     bash <(curl https://gitee.com/juway111/nastool/raw/master/centos/00_centos_start.sh)
 }
 # 3.查看docker整体磁盘使用率
-docker system df() {
+df() {
     docker system df
 }
 # 4.删除未被任何容器使用的本地卷
-docker volume prune() {
+prune() {
     docker volume prune
 }
 
@@ -58,9 +58,9 @@ nas
 elif [  $num  == 2  ]; then
 centos
 elif [  $num  == 3  ]; then
-docker system df
+df
 elif [  $num  == 4  ]; then
-docker volume prune
+prune
 elif [  $num  == 0  ]; then
 red " 我们下次再见，拜拜"
 exit
@@ -68,7 +68,6 @@ else
 red "请输入正确的数字，启动对应功能[0-4]: "
 yellow "请输入正确的数字，启动对应功能[0-4]: "
 green "请输入正确的数字，启动对应功能[0-4]: "
-bash <(curl https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
 fi
 else
   yum -y install wget
