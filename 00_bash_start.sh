@@ -68,6 +68,7 @@ else
 red "请输入正确的数字，启动对应功能[0-4]: "
 yellow "请输入正确的数字，启动对应功能[0-4]: "
 green "请输入正确的数字，启动对应功能[0-4]: "
+bash <(curl https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
 fi
 else
   yum -y install wget
