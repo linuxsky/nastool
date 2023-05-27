@@ -2,7 +2,7 @@
 # 获取IP地址及其信息
 # check root
 [[ $EUID -ne 0 ]] && echo -e "${red}错误：${plain} 必须使用root用户运行此脚本！\n" && exit 1
-#定义颜色
+# 定义颜色
 green() {
 	echo -e "\033[32m\033[01m$1\033[0m"
 }
@@ -30,7 +30,6 @@ df() {
 prune() {
 	docker volume prune -y
 }
-
 #内存使用率
 my_mem=$(free | awk '/^Mem:/{print $3/$2 * 100.0 "%"}')
 #cpu平均使用率
