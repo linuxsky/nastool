@@ -24,11 +24,11 @@ centos() {
 }
 # 3.查看docker整体磁盘使用率
 df() {
-	docker system df && bash <(curl -s https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
+	docker system df
 }
 # 4.删除未被任何容器使用的本地卷
 prune() {
-	docker volume prune && bash <(curl -s https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
+	docker volume prune -y
 }
 
 #内存使用率
@@ -67,8 +67,8 @@ else
 red "请输入正确的数字，启动对应功能[0-4]: "
 yellow "请输入正确的数字，启动对应功能[0-4]: "
 green "请输入正确的数字，启动对应功能[0-4]: "
-bash <(curl -s https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
 fi
 else
 	yum -y install wget
 fi
+bash <(curl -s https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
