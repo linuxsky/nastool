@@ -1,5 +1,4 @@
 #!/bin/bash
-# 获取IP地址及其信息
 # check root
 [[ $EUID -ne 0 ]] && echo -e "${red}错误：${plain} 必须使用root用户运行此脚本！\n" && exit 1
 # 定义颜色
