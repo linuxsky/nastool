@@ -1,5 +1,7 @@
 #!/bin/bash
 # 获取IP地址及其信息
+# check root
+[[ $EUID -ne 0 ]] && echo -e "${red}错误：${plain} 必须使用root用户运行此脚本！\n" && exit 1
 #定义颜色
 green() {
 	echo -e "\033[32m\033[01m$1\033[0m"
@@ -28,12 +30,19 @@ df() {
 prune() {
 	docker volume prune -y
 }
+
+#内存使用率
+my_mem=$(free | awk '/^Mem:/{print $3/$2 * 100.0 "%"}')
+#cpu平均使用率
+my_cpu=$(top -bn1 | awk '/^%Cpu/{print $2+$4}')%
 echo -e "
 =====================================================
 \033[33m$HOSTNAME你好！
 请认准闲鱼号：爱上nas爱上家
 登录用户:$USER
 所在目录:$PWD
+内存使用率:$my_mem
+CPU平均使用率:$my_cpu
 ====================================================="
 echo -e "\033[32m1.群晖、威联通、unraid等nas系统
 2.centos服务器系统
