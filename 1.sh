@@ -1,16 +1,4 @@
 #!/bin/bash
-# check root
-[[ $EUID -ne 0 ]] && echo -e "${red}错误：${plain} 必须使用root用户运行此脚本！\n" && exit 1
-# 定义颜色
-green() {
-	echo -e "\033[32m\033[01m$1\033[0m"
-}
-red() {
-	echo -e "\033[31m\033[01m$1\033[0m"
-}
-yellow() {
-	echo -e "\033[33m\033[01m$1\033[0m"
-}
 # 检查wget是否安装
 if which wget > /dev/null 2>&1; then
 # 1.群晖、威联通、unraid等nas系统
