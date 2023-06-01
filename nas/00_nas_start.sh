@@ -58,6 +58,7 @@ ffmpeg() {
 rm -rf /root/ffmpeg        # 删除目录
 mkdir /root/ffmpeg         # 创建目录  
 wget -O ffmpeg-git-amd64-static.tar.xz https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
+
 if [ -f ffmpeg-git-amd64-static.tar.xz ]; then  
 tar -xJvf ffmpeg-git-amd64-static.tar.xz -C /root/ffmpeg   # 解压缩到目录
 red "*****************************************"
