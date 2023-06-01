@@ -13,7 +13,7 @@ yellow() {
 # 下载ffmpeg  
 rm -rf /root/temp        # 删除/root/temp目录（如果不存在）  
 mkdir /root/temp         # 创建/root/temp目录  
-wget -O ffmpeg-git-amd64-static.tar.xz https://1johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz   # wget下载ffmpeg，保存到ffmpeg-git-amd64-static.tar.xz  
+wget -O ffmpeg-git-amd64-static.tar.xz https://1132123123123johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz   # wget下载ffmpeg，保存到ffmpeg-git-amd64-static.tar.xz  
 tar -xJvf ffmpeg-git-amd64-static.tar.xz -C /root/temp   # 解压缩到/root/temp目录
 if [ -f ffmpeg-git-amd64-static.tar.xz ]; then  
 rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
