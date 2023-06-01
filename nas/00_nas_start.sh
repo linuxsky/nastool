@@ -66,6 +66,7 @@ filename=$(ls -p /root/ffmpeg)
 green "jellyfi控制台设置FFmpeg路径设置为："
 yellow "/ffmpeg/$filename"ffmpeg
 red "*****************************************"
+sleep 2
 rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
 else
     yellow "下载失败，再试一次吧！"
