@@ -21,7 +21,7 @@ rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件
 red "*****************************************"
 filename=$(ls -p /root/ffmpeg)  
 green "jellyfi控制台设置FFmpeg路径设置为："
-yellow "/ffmpeg/$filenameffmpeg"
+yellow "/ffmpeg/$filename"yellow "ffmpeg"
 red "*****************************************"
     exit 1  
 else
