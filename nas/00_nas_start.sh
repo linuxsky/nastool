@@ -55,22 +55,7 @@ fi
 }
 # 6.下载ffmpeg  
 ffmpeg() {
-rm -rf /root/ffmpeg        # 删除目录
-mkdir /root/ffmpeg         # 创建目录  
-wget -O ffmpeg-git-amd64-static.tar.xz https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
-
-if [ -d "/ffmpeg/$filename" ]; then  
-tar -xJvf ffmpeg-git-amd64-static.tar.xz -C /root/ffmpeg   # 解压缩到目录
-red "*****************************************"
-filename=$(ls -p /root/ffmpeg)  
-green "jellyfi控制台设置FFmpeg路径设置为："
-yellow "/ffmpeg/$filename"ffmpeg
-red "*****************************************"
-sleep 2
-rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
-else
-    yellow "下载失败，再试一次吧！"
-fi
+	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
 }
 # 99.删除所有docker容器和镜像
 rm_images_container() {
