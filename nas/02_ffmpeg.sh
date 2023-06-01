@@ -16,7 +16,15 @@ rm -rf /root/ffmpeg        # 删除目录
 mkdir /root/ffmpeg         # 创建目录  
 wget -O ffmpeg-git-amd64-static.tar.xz https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
 
-if [ -d "/ffmpeg/$filename" ]; then  
+# 指定要查找的文件名和目录路径  
+file_to_find="ffmpeg"  
+directory="/root/ffmpeg"  
+  
+# 遍历目录下的所有文件和子文件夹  
+for file in $(find "$directory" -type f -name "$file_to_find")  
+do  
+  # 判断文件是否存在  
+  if [ -f "$file" ]; then  
 tar -xJvf ffmpeg-git-amd64-static.tar.xz -C /root/ffmpeg   # 解压缩到目录
 red "*****************************************"
 filename=$(ls -p /root/ffmpeg)  
