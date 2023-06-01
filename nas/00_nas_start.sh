@@ -53,6 +53,25 @@ else
 建议您升级硬件或打驱动补丁哦！"
 fi
 }
+# 6.下载ffmpeg  
+ffmpeg() {
+rm -rf /root/ffmpeg        # 删除目录
+mkdir /root/ffmpeg         # 创建目录  
+wget -O ffmpeg-git-amd64-static.tar.xz https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
+tar -xJvf ffmpeg-git-amd64-static.tar.xz -C /root/ffmpeg   # 解压缩到目录
+if [ -f ffmpeg-git-amd64-static.tar.xz ]; then  
+rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
+
+red "*****************************************"
+filename=$(ls -p /root/ffmpeg)  
+green "jellyfi控制台设置FFmpeg路径设置为："
+yellow "/ffmpeg/$filename"ffmpeg
+red "*****************************************"
+    exit 1  
+else
+    yellow "下载失败，再试一次吧！"
+fi
+}
 # 99.删除所有docker容器和镜像
 rm_images_container() {
 	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/99_rm_images_container.sh)
@@ -74,12 +93,13 @@ echo -e "
 2.添加api.themoviedb.org到hosts文件
 3.手动编辑hosts文件
 4.自动安装nastool、TR、jellyfin、TMM
-5.检测本设备是否支持核显硬件解码\033[0m
+5.检测本设备是否支持核显硬件解码
+6.安装硬件解码FFmpeg\033[0m
 \033[31m99.删除所有docker容器和镜像(谨慎选择)\033[0m
 \033[32m0.退出脚本\033[0m
 ======================================================"
 
-read -p "请输入以上数字[0-5]查看系统相应信息: " num
+read -p "请输入以上数字[0-6]查看系统相应信息: " num
 if [  $num  == 1  ]; then
 chaipv4
 elif [  $num  == 2  ]; then
@@ -90,14 +110,16 @@ elif [  $num  == 4  ]; then
 docker
 elif [  $num  == 5  ]; then
 hexian
+elif [  $num  == 6  ]; then
+ffmpeg
 elif [  $num  == 99  ]; then
 rm_images_container
 elif [  $num  == 0  ]; then
 	red "我们下次再见，拜拜"
 	exit 1
 else
-	red "请输入正确的数字，启动对应功能[0-5]: "
-	yellow "请输入正确的数字，启动对应功能[0-5]: "
-	green "请输入正确的数字，启动对应功能[0-5]: "
+	red "请输入正确的数字，启动对应功能[0-6]: "
+	yellow "请输入正确的数字，启动对应功能[0-6]: "
+	green "请输入正确的数字，启动对应功能[0-6]: "
 fi
 	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh)
