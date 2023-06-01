@@ -14,7 +14,7 @@ yellow() {
 # 下载ffmpeg  
 rm -rf /root/ffmpeg        # 删除目录
 mkdir /root/ffmpeg         # 创建目录  
-wget -O ffmpeg-git-amd64-static.tar.xz https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
+wget -O ffmpeg-git-amd64-static.tar.xz https://123123johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
 
 # 指定要查找的文件名和目录路径  
 file_to_find="ffmpeg"  
@@ -36,3 +36,4 @@ rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件
 else
     yellow "下载失败，再试一次吧！"
 fi
+done
