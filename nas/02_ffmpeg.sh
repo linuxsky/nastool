@@ -17,9 +17,11 @@ wget -O ffmpeg-git-amd64-static.tar.xz https://johnvansickle.com/ffmpeg/builds/f
 tar -xJvf ffmpeg-git-amd64-static.tar.xz -C /root/ffmpeg   # 解压缩到目录
 if [ -f ffmpeg-git-amd64-static.tar.xz ]; then  
 rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
+
 yellow "*****************************************"
-    yellow "jellyfi控制台设置FFmpeg路径设置为/ffmpeg/" && ls /root/ffmpeg&yellow && "/ffmpeg"
-yellow "*****************************************"
+filename=$(ls -p /root/ffmpeg)  
+yellow"jellyfi控制台设置FFmpeg路径设置为/ffmpeg/$filename/ffmpeg"
+ "*****************************************"
     exit 1  
 else
     bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
