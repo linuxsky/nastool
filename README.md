@@ -1,6 +1,6 @@
 ## 一键安装docker脚本
 ```
-bash <(curl -s https://gitee.com/juway111/nastool/raw/master/bash_start.sh)
+bash <(curl -s https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh)
 ```
 ## 套件版本spk下载
 ```
