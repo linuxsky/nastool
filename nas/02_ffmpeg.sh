@@ -18,7 +18,7 @@ tar -xJvf ffmpeg-git-amd64-static.tar.xz -C /root/temp   # 解压缩到/root/tem
 if [ -f ffmpeg-git-amd64-static.tar.xz ]; then  
 rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
 
-if [ -f /usr/bin/ffmpeg -a -f /usr/bin/ffprobe ]; then   # 如果文件存在  
+if [ -f /usr/bin/ffmpeg* -a -f /usr/bin/ffprobe* ]; then   # 如果文件存在  
     find /root/temp -depth -name "ffmpeg*" -o -name "ffprobe*" -exec cp -i '{}' /usr/bin/ \;   # 在/root/temp目录下查找ffmpeg和ffprobe文件，并复制到/usr/bin/目录  
     yellow "/usr/bin/目录下已经存在ffmpeg和ffprobe，任务完成！"
 else  
