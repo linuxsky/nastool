@@ -18,7 +18,7 @@ tar -xJvf ffmpeg-git-amd64-static.tar.xz -C /root/ffmpeg   # 解压缩到目录
 if [ -f ffmpeg-git-amd64-static.tar.xz ]; then  
 rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
 yellow "*****************************************"
-    yellow "jellyfi控制台设置FFmpeg路径设置为/ffmpeg/"&ls /root/ffmpeg&yellow "/ffmpeg"
+    yellow "jellyfi控制台设置FFmpeg路径设置为/ffmpeg/" && ls /root/ffmpeg&yellow && "/ffmpeg"
 yellow "*****************************************"
     exit 1  
 else
