@@ -7,7 +7,6 @@ result=$(docker-compose -v)
 if ! [[ $result == *"docker-compose version:"*" " ]]; then  
   # 如果不包含版本信息，则安装docker-compose  
   echo "Installing docker-compose..."  
-  sudo yum install -y docker-compose  
 else  
   echo "docker-compose already installed"  
 fi
