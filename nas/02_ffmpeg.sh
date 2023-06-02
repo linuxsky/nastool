@@ -17,7 +17,12 @@ if [ $y = "y" ];then
 mkdir $ip_address1/jellyfin/ffmpeg
 # 下载ffmpeg  
 wget -O ffmpeg-git-amd64-static.tar.xz https://123123johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
-tar -xJvf ffmpeg-git-amd64-static.tar.xz -C $ip_address1/jellyfin/ffmpeg   # 解压缩到目录
+
+if [ -f "ffmpeg-git-amd64-static.tar.xz" ]; then
+    tar -xJvf ffmpeg-git-amd64-static.tar.xz -C $ip_address1/jellyfin/ffmpeg   # 解压缩到目录
+else
+    yellow "下载失败！"
+fi
 
 # 指定要查找的文件名和目录路径  
 file_to_find="ffmpeg"  
