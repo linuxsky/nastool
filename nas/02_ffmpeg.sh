@@ -16,6 +16,7 @@ read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 if [ $y = "y" ];then
 rm -rf $ip_address1/jellyfin/ffmpeg
 mkdir $ip_address1/jellyfin/ffmpeg
+rm -rf ffmpeg-git-amd64-static.tar.xz
 # 下载ffmpeg  
 wget -O ffmpeg-git-amd64-static.tar.xz https://123123johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
 
