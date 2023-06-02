@@ -31,18 +31,19 @@ directory="$ip_address1/jellyfin/ffmpeg"
 for file in $(find "$directory" -type f -name "$file_to_find")  
 do  
   # 判断文件是否存在  
-  if [ -f "$file" ]; then  
-red "*****************************************"
-filename=$(ls -p $ip_address1/jellyfin/ffmpeg)  
-green "jellyfi控制台设置FFmpeg路径设置为："
-yellow "/config/ffmpeg/$filename"ffmpeg
-red "*****************************************"
-sleep 2
-rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
+if [ -f "$file" ]; then  
+    red "*****************************************"
+    filename=$(ls -p $ip_address1/jellyfin/ffmpeg)  
+    green "jellyfi控制台设置FFmpeg路径设置为："
+    yellow "/config/ffmpeg/$filename"ffmpeg
+    red "*****************************************"
+    sleep 2
+    rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
 else
     yellow "下载失败，再试一次吧！"
 fi
 done
 else
+    bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
     bash 02_ffmpeg.sh
 fi
