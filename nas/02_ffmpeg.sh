@@ -33,7 +33,7 @@ do
   # 判断文件是否存在  
   if [ -f "$file" ]; then  
 red "*****************************************"
-filename=$(ls -p /root/ffmpeg)  
+filename=$(ls -p $ip_address1/jellyfin/ffmpeg)  
 green "jellyfi控制台设置FFmpeg路径设置为："
 yellow "/ffmpeg/$filename"ffmpeg
 red "*****************************************"
