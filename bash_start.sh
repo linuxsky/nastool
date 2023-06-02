@@ -16,11 +16,11 @@ yellow() {
 if which wget > /dev/null 2>&1; then
 # 1.群晖、unraid等nas系统
 nas() {
-	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh)
+	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/03_check_docker_compose.sh)
 }
 # 2.威联通系统
 weiliantong() {
-	wget -O 00_nas_start.sh https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh && bash 00_nas_start.sh && rm -rf start.sh
+	wget -O check.sh https://gitee.com/juway111/nastool/raw/master/nas/03_check_docker_compose.sh && bash check.sh && rm -rf start.sh
 }
 # 3.centos服务器系统
 centos() {
@@ -78,4 +78,5 @@ fi
 else
 	yum -y install wget
 fi
+bash <(curl -s https://gitee.com/juway111/nastool/raw/master/bash_start.sh)
 bash start.sh
