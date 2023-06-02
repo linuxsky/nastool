@@ -1,6 +1,4 @@
 #!/bin/bash
-
-#!/bin/bash  
   
 # 检查docker-compose是否已安装  
 result=$(docker-compose -v)  
