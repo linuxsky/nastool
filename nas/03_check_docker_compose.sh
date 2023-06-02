@@ -7,6 +7,9 @@ result=$(docker-compose -v)
 if ! [[ $result == *"docker-compose"* ]]; then  
   # 如果不包含"docker-compose"字符串，则安装docker-compose  
   echo "Installing docker-compose..."  
+  sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
+  docker-compose --version
 else  
   echo "docker-compose already installed"  
 fi
