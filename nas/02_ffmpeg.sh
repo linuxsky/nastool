@@ -19,7 +19,8 @@ mkdir $ip_address1/jellyfin/ffmpeg
 rm -rf ffmpeg-git-amd64-static.tar.xz
 
 # 下载ffmpeg  
-wget -O ffmpeg-git-amd64-static.tar.xz https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
+wget -O ffmpeg-git-amd64-static.tar.xz https://d.nastool.work/d/%E9%98%BF%E9%87%8C%E7%BD%91%E7%9B%98/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5/1.%E6%B8%B8%E5%AE%A2%E4%B8%8B%E8%BD%BD/SSH%E5%B7%A5%E5%85%B7/wget%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95/ffmpeg-git-amd64-static.tar.xz
+# 原下载地址备份https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
 tar -xJvf ffmpeg-git-amd64-static.tar.xz -C "$ip_address1/jellyfin/ffmpeg"  
 
 # 指定要查找的文件名和目录路径  
