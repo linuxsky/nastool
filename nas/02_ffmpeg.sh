@@ -14,14 +14,16 @@ read -p "请输入你的docker目录: " ip_address1
 read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 
 if [ $y = "y" ];then
+rm -rf $ip_address1/jellyfin/ffmpeg
 mkdir $ip_address1/jellyfin/ffmpeg
 # 下载ffmpeg  
 wget -O ffmpeg-git-amd64-static.tar.xz https://123123johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
 
-if [ -f ffmpeg-git-amd64-static.tar.xz ]; then
-    tar -xJvf ffmpeg-git-amd64-static.tar.xz -C $ip_address1/jellyfin/ffmpeg   # 解压缩到目录
-else
-    yellow "下载失败！"
+if [ -f ffmpeg-git-amd64-static.tar.xz ]; then  
+    # 解压缩到目录  
+    tar -xJvf ffmpeg-git-amd64-static.tar.xz -C "$ip_address1/jellyfin/ffmpeg"  
+else  
+    echo -e "\033[33m 下载失败！\033[0m"   # 输出黄色文本  
 fi
 
 # 指定要查找的文件名和目录路径  
