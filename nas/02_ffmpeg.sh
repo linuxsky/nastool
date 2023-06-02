@@ -11,8 +11,10 @@ yellow() {
 	echo -e "\033[33m\033[01m$1\033[0m"
 }
 read -p "请输入你的docker目录: " ip_address1
-mkdir $ip_address1/jellyfin/ffmpeg
+read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 
+if [ $y = "y" ];then
+mkdir $ip_address1/jellyfin/ffmpeg
 # 下载ffmpeg  
 wget -O ffmpeg-git-amd64-static.tar.xz https://123123johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
 tar -xJvf ffmpeg-git-amd64-static.tar.xz -C $ip_address1/jellyfin/ffmpeg   # 解压缩到目录
@@ -37,3 +39,6 @@ else
     yellow "下载失败，再试一次吧！"
 fi
 done
+else
+    bash 02_ffmpeg.sh
+fi
