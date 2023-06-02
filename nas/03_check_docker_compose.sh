@@ -20,4 +20,6 @@ else
 fi
 else  
   echo "docker-compose already installed"  
+  bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh)
+  bash 00_nas_start.sh
 fi
