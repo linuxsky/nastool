@@ -32,7 +32,7 @@ df() {
 }
 # 5.删除未被任何容器使用的本地卷
 prune() {
-	docker volume prune -y
+	docker volume prune
 }
 #内存使用率
 my_mem=$(free | awk '/^Mem:/{print $3/$2 * 100.0 "%"}')
