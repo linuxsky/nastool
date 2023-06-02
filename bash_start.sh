@@ -19,7 +19,7 @@ nas() {
 	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh)
 }
 # 2.威联通系统
-	wget https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh && bash 00_nas_start.sh && rm -rf 00_bash_start.sh
+	wget -O 00_nas_start.sh https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh && bash 00_nas_start.sh && rm -rf start.sh
 # 3.centos服务器系统
 centos() {
 	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/centos/00_centos_start.sh)
@@ -66,7 +66,7 @@ elif [  $num  == 5  ]; then
 prune
 elif [  $num  == 0  ]; then
 red "我们下次再见，拜拜 "
-rm -rf 00_bash_start.sh
+rm -rf start.sh
 exit 1
 else
 red "请输入正确的数字，启动对应功能[0-5]: "
@@ -76,4 +76,4 @@ fi
 else
 	yum -y install wget
 fi
-bash 00_bash_start.sh
+bash start.sh
