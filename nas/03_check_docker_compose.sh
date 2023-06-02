@@ -13,7 +13,7 @@ if ! [[ $result == *"docker-compose"* ]]; then
 if [ -f /usr/local/bin/docker-compose ]; then 
   echo "安装成功！"
 else  
-  echo "安装失败！"
+  echo "安装失败，请重试！"
 fi
 else  
   echo "docker-compose already installed"  
