@@ -55,7 +55,7 @@ fi
 }
 # 6.下载ffmpeg  
 ffmpeg() {
-	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
+    wget -O ffmpeg.sh https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh && bash ffmpeg.sh rm -rf ffmpeg.sh
 }
 # 99.删除所有docker容器和镜像
 rm_images_container() {
