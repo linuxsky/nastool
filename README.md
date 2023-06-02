@@ -1,6 +1,6 @@
 ## 一键安装docker脚本
 ```
-wget -O start.sh https://gitee.com/juway111/nastool/raw/master/00_bash_start.sh && bash start.sh
+wget -O start.sh https://gitee.com/juway111/nastool/raw/master/bash_start.sh && bash start.sh
 ```
 ## 套件版本spk下载
 ```
