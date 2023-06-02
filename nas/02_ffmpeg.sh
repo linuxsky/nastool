@@ -35,7 +35,7 @@ do
 red "*****************************************"
 filename=$(ls -p $ip_address1/jellyfin/ffmpeg)  
 green "jellyfi控制台设置FFmpeg路径设置为："
-yellow "/ffmpeg/$filename"ffmpeg
+yellow "/config/ffmpeg/$filename"ffmpeg
 red "*****************************************"
 sleep 2
 rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
