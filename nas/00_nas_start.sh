@@ -108,3 +108,4 @@ else
 	green "请输入正确的数字，启动对应功能[0-6]: "
 fi
 	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh)
+    bash 00_nas_start.sh
