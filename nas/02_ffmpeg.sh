@@ -31,7 +31,7 @@ directory="$ip_address1/jellyfin/ffmpeg"
 # 遍历目录下的所有文件和子文件夹  
 for file in $(find "$directory" -type f -name "$file_to_find")  
 do  
-  # 判断文件是否存在  
+  # 如果解压文件存在的话  
 if [ -f "$file" ]; then  
     red "*****************************************"
     filename=$(ls -p $ip_address1/jellyfin/ffmpeg)  
@@ -39,6 +39,7 @@ if [ -f "$file" ]; then
     yellow "/config/ffmpeg/$filename"ffmpeg
     red "*****************************************"
     sleep 2
+    rm -rf ffmpeg.sh
     rm -rf ffmpeg-git-amd64-static.tar.xz   # 删除原文件  
 else
     yellow "下载失败，再试一次吧！"
@@ -46,5 +47,5 @@ fi
 done
 else
     bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
-    bash 02_ffmpeg.sh
+    bash ffmpeg.sh
 fi
