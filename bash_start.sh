@@ -20,7 +20,7 @@ nas() {
 }
 # 2.威联通系统
 weiliantong() {
-	wget -O check.sh https://gitee.com/juway111/nastool/raw/master/nas/03_check_docker_compose.sh && bash check.sh && rm -rf start.sh
+	wget -O check.sh https://gitee.com/juway111/nastool/raw/master/nas/03_check_docker_compose.sh && wget -O 00_nas_start.sh https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh && bash check.sh && rm -rf start.sh
 }
 # 3.centos服务器系统
 centos() {
