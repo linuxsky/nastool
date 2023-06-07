@@ -74,14 +74,16 @@ echo -e "
  内存使用率:$my_mem
  CPU平均使用率:$my_cpu
  ====================================================="
-green "1.查看本机ipv4公网IP
-2.添加api.themoviedb.org到hosts文件
-3.手动编辑hosts文件
-4.自动安装nastool、TR、jellyfin、TMM
+green "
+1.查看本机公网ipv4地址
+2.添加api.themoviedb.org到hosts
+3.手动编辑hosts
+4.自动安装Nastool全套软件
 5.检测本设备是否支持核显硬件解码
 6.安装硬件解码FFmpeg"
 red "99.删除所有docker容器和镜像(谨慎选择)"
 echo "0.返回首页
+
 ======================================================"
 
 read -p "请输入以上数字[0-6]查看系统相应信息: " num
