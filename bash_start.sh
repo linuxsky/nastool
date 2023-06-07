@@ -26,13 +26,17 @@ weiliantong() {
 centos() {
 	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/centos/00_centos_start.sh)
 }
-# 4.查看docker整体磁盘使用率
+# 4.查看docker磁盘使用情况
 df() {
-	docker system df
+	docker system df && docker system df -v
 }
 # 5.删除未被任何容器使用的本地卷
 prune() {
 	docker volume prune
+}
+# 6.删除未被任何容器使用的镜像（谨慎选择）
+image() {
+	docker image prune
 }
 #内存使用率
 my_mem=$(free | awk '/^Mem:/{print $3/$2 * 100.0 "%"}')
@@ -52,10 +56,11 @@ echo -e "\033[32m1.群晖、unraid等nas系统
 3.centos服务器系统
 4.查看docker整体磁盘使用率
 5.删除未被任何容器使用的本地卷
+6.删除未被任何容器使用的镜像（谨慎选择）
 \033[32m0.清除缓存并退出脚本\033[0m
 ======================================================"
 
-read -p "请输入以上数字[0-4]查看系统相应信息: " num
+read -p "请输入以上数字[0-6]查看系统相应信息: " num
 if [  $num  == 1  ]; then
 nas
 elif [  $num  == 2  ]; then
@@ -66,14 +71,16 @@ elif [  $num  == 4  ]; then
 df
 elif [  $num  == 5  ]; then
 prune
+elif [  $num  == 6  ]; then
+image
 elif [  $num  == 0  ]; then
 red "我们下次再见，拜拜 "
 rm -rf start.sh
 exit 1
 else
-red "请输入正确的数字，启动对应功能[0-5]: "
-yellow "请输入正确的数字，启动对应功能[0-5]: "
-green "请输入正确的数字，启动对应功能[0-5]: "
+red "请输入正确的数字，启动对应功能[0-6]: "
+yellow "请输入正确的数字，启动对应功能[0-6]: "
+green "请输入正确的数字，启动对应功能[0-6]: "
 fi
 else
 	yum -y install wget
