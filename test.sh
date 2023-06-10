@@ -1,12 +1,18 @@
 #!/bin/bash  
   
-# 检查docker-compose是否已安装  
-result=$(docker-compose -v)  
-  
-# 检查输出是否包含"docker-compose"字符串  
-if ! [[ $result == *"docker-compose"* ]]; then  
-  # 如果不包含"docker-compose"字符串，则安装docker-compose  
-  echo "Installing docker-compose..."  
-else  
-  echo "docker-compose already installed"  
-fi
+mkdir /temp
+
+cd /temp
+
+wget http://ipkg.nslu2-linux.org/feeds/optware/syno-i686/cross/unstable/syno-i686-bootstrap_1.2-7_i686.xsh
+
+
+chmod +x syno-i686-bootstrap_1.2-7_i686.xsh
+
+sh syno-i686-bootstrap_1.2-7_i686.xsh
+
+ipkg update
+
+ipkg install lm-sensors
+
+sensors
