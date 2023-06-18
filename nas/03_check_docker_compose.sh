@@ -10,8 +10,7 @@ result=$(docker-compose -v)
 # 检查输出是否包含"docker-compose"字符串  
 if ! [[ $result == *"docker-compose"* ]]; then    # 如果不包含"docker-compose"字符串，则安装docker-compose  
   yellow "正在安装 docker-compose..."  
-  curl -SL https://github.com/docker/compose/releases/download/v2.7.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
-  sudo chmod +x /usr/local/bin/docker-compose
+  curl -SL https://github.com/docker/compose/releases/download/v2.7.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose
   docker-compose --version
 if [ -f /usr/local/bin/docker-compose ]; then 
   yellow "安装成功！正在跳转..."
