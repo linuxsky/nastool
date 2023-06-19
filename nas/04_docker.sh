@@ -24,7 +24,7 @@ read -p "请输入你的video 目录: " ip_address2
 echo "version: '3.3'
 services:
   nastools:
-    image: 19970688/nastools-bt:latest
+    image: miraclemie/nas-tools:latest
     # ports:
     #  - 3000:3000
     volumes:
