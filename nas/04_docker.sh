@@ -176,8 +176,8 @@ if [ $y2 = "y" ];then
 #    rm -rf docker.tar.gz && wget -c https://d.nastool.work/d/IPV6%E9%AB%98%E9%80%9F%E7%BD%91%E7%9B%98/1.%E6%B8%B8%E5%AE%A2%E4%B8%8B%E8%BD%BD/SSH%E5%B7%A5%E5%85%B7/wget%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95/docker.tar.gz -O docker.tar.gz
 #    rm -rf video.tar.gz && wget -c https://d.nastool.work/d/IPV6%E9%AB%98%E9%80%9F%E7%BD%91%E7%9B%98/1.%E6%B8%B8%E5%AE%A2%E4%B8%8B%E8%BD%BD/SSH%E5%B7%A5%E5%85%B7/wget%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95/video.tar.gz -O video.tar.gz
 
-    rm -rf docker.tar.gz && wget -c https://d.nastool.work/d/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5/1.%E6%B8%B8%E5%AE%A2%E4%B8%8B%E8%BD%BD/SSH%E5%B7%A5%E5%85%B7/wget%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95/docker.tar.gz -O docker.tar.gz
-    rm -rf video.tar.gz && wget -c https://d.nastool.work/d/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5/1.%E6%B8%B8%E5%AE%A2%E4%B8%8B%E8%BD%BD/SSH%E5%B7%A5%E5%85%B7/wget%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95/video.tar.gz -O video.tar.gz
+    rm -rf docker.tar.gz && wget -c https://gitee.com/juway111/nastool/raw/master/docker.tar.gz -O docker.tar.gz
+    rm -rf video.tar.gz && wget -c https://gitee.com/juway111/nastool/raw/master/video.tar.gz -O video.tar.gz
 # 检测是否下载
 if [ -f docker.tar.gz -a -f video.tar.gz ]; then
     yellow "下载已完成！"
