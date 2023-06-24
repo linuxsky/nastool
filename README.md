@@ -23,4 +23,7 @@ ipkg remove wget
 
 ##安装支持https的wget
 ipkg install wget-ssl
+
+##禁用 HTTPS 证书验证
+wget --no-check-certificate https://...
 ```
