@@ -14,3 +14,13 @@ bash <(curl -s https://gitee.com/juway111/nastool/raw/master/02_tar_docker.sh)
 ```
 bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
 ```
+
+# 一些问题的解决方案
+1. 群辉无法使用wget的情况
+```
+##卸载原有wget
+ipkg remove wget
+
+##安装支持https的wget
+ipkg install wget-ssl
+```
