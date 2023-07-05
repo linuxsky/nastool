@@ -15,7 +15,7 @@ read -p "请输入文件夹名称: " ip_address2
 # 确认目录是否正确
 green "==================================================="
 echo -e "你输入的下载目录为: \033[33m/volume$ip_address1/$ip_address2\033[0m"
-yellow "请确认目录是否正确"
+yellow "请确认目录是否正确，会在你输入的目录下新建dockerdown文件夹"
 read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 rm -rf /volume$ip_address1/$ip_address2/dockerdown && mkdir /volume$ip_address1/$ip_address2/dockerdown
 # 下载文件
