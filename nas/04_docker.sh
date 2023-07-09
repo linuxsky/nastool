@@ -144,8 +144,8 @@ echo "version: '2.1'
 services:
    jackett:
     image: linuxserver/jackett:latest
-    ports:
-      - 9117:9117
+    # ports:
+    #  - 9117:9117
     volumes:
       - $ip_address1/jackett:/config   # 冒号左边请修改为你想保存配置的路径
       - $ip_address1/jackett/torrent:/downloads # 映射种子目录
@@ -155,7 +155,7 @@ services:
       - UMASK=022 # 掩码权限，默认000，可以考虑设置为022
       - AUTO_UPDATE=true
     restart: always
-    network_mode: bridge # host
+    network_mode: host # bridge
     hostname: 05-jackett-9117
     container_name: 05-jackett-9117" >> docker-compose-jackett.yaml
 
