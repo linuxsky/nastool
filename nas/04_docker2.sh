@@ -37,16 +37,16 @@ tmm() {
 all() {
   yellow "正在安装01-nastool，请稍后..."
   docker-compose -p nastool -f docker-compose-nastool.yaml up -d
-  yellow "正在安装02-tr下载器，请稍后..."
-  docker-compose -p tr -f docker-compose-tr.yaml up -d
   yellow "正在安装03-jellyfin播放器，请稍后..."
   docker-compose -p jellyfin -f docker-compose-jellyfin.yaml up -d
-  yellow "正在安装04-tmm搜刮器，请稍后..."
-  docker-compose -p tmm -f docker-compose-tmm.yaml up -d
   yellow "正在安装02-qb下载器，请稍后..."
   docker-compose -p qb -f docker-compose-qb.yaml up -d
   yellow "正在安装05-jackett资源池，请稍后..."
   docker-compose -p jackett -f docker-compose-jackett.yaml up -d
+  yellow "正在安装04-tmm搜刮器，请稍后..."
+  docker-compose -p tmm -f docker-compose-tmm.yaml up -d
+  yellow "正在安装02-tr下载器，请稍后..."
+  docker-compose -p tr -f docker-compose-tr.yaml up -d
   bash 04_docker2.sh
 }
 # 6.nastool3.0
@@ -59,14 +59,14 @@ nastool3() {
 nastool3_all() {
   yellow "正在安装01-nastool-3.0，请稍后..."
   docker-compose -p nastool3 -f docker-compose-nastool3.yaml up -d
-  yellow "正在安装02-tr下载器，请稍后..."
-  docker-compose -p tr -f docker-compose-tr.yaml up -d
   yellow "正在安装03-jellyfin播放器，请稍后..."
   docker-compose -p jellyfin -f docker-compose-jellyfin.yaml up -d
-  yellow "正在安装04-tmm搜刮器，请稍后..."
-  docker-compose -p tmm -f docker-compose-tmm.yaml up -d
   yellow "正在安装02-qb下载器，请稍后..."
   docker-compose -p qb -f docker-compose-qb.yaml up -d
+  yellow "正在安装04-tmm搜刮器，请稍后..."
+  docker-compose -p tmm -f docker-compose-tmm.yaml up -d
+  yellow "正在安装02-tr下载器，请稍后..."
+  docker-compose -p tr -f docker-compose-tr.yaml up -d
   bash 04_docker2.sh
 }
 # 8.jackett
