@@ -70,7 +70,6 @@ services:
     volumes:
       - $ip_address1/jellyfin:/config   # 冒号左边请修改为你想保存配置的路径
       - $ip_address2:/video # 映射数据目录
-      - /root/ffmpeg:/ffmpeg # 硬件解码目录
     environment:
       - PUID=0
       - PGID=0
@@ -189,7 +188,6 @@ tar -zxf video.tar.gz -C $ip_address2
 # 输出解压缩成功的提示
 if [ -d "$ip_address1/nastool" -o -d "$ip_address2/源文件" ]; then
     yellow "解压缩成功，文件已经存储docker目录中"
-    mkdir /root/ffmpeg
     rm -rf docker.tar.gz
     rm -rf video.tar.gz
     else
