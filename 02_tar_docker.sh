@@ -20,7 +20,7 @@ read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 rm -rf /volume$ip_address1/$ip_address2/dockerdown && mkdir /volume$ip_address1/$ip_address2/dockerdown
 # 下载文件
 if [ $y = "y" ];then
-    rm -rf /volume$ip_address1/$ip_address2/docker.tar.gz && wget -c https://nastool.work/bash/wget/docker.tar.gz -O /volume$ip_address1/$ip_address2/docker.tar.gz
+    rm -rf /volume$ip_address1/$ip_address2/docker.tar.gz && wget -c https://d.juway.top/d/nastool/Cloud%20Sync/1.Alist/wget/nastool/docker.tar.gz -O /volume$ip_address1/$ip_address2/docker.tar.gz
 # 检测是否下载
 if [ -f /volume$ip_address1/$ip_address2/docker.tar.gz ]; then
     yellow "下载已完成！"
