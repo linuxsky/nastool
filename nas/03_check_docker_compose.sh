@@ -7,7 +7,7 @@ yellow() {
 # 检查docker-compose是否已安装  
 result=$(docker-compose -v)  
   
-# 检查输出是否包含"docker-compose"字符串  
+# 检查输出是否包含"docker-compose"字符串
 if ! [[ $result == *"version"* ]]; then    # 如果不包含"version"字符串，则安装docker-compose  
   yellow "正在安装 docker-compose..."  
   wget https://d.juway.top/d/nastool/Cloud%20Sync/1.Alist/wget/nastool/docker-compose-linux-x86_64.gz -O /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose && docker-compose --version
