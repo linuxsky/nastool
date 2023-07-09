@@ -172,8 +172,8 @@ read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 
 # 下载文件
 if [ $y2 = "y" ];then
-    rm -rf docker.tar.gz && wget -c https://d.juway.top/d/vuepress/docs/.vuepress/public/wget-nastool/docker.tar.gz -O docker.tar.gz
-    rm -rf video.tar.gz && wget -c https://d.juway.top/d/vuepress/docs/.vuepress/public/wget-nastool/video.tar.gz -O video.tar.gz
+    rm -rf docker.tar.gz && wget -c https://d.juway.top/d/nastool/Cloud%20Sync/1.Alist/wget/nastool/docker.tar.gz -O docker.tar.gz
+    rm -rf video.tar.gz && wget -c https://d.juway.top/d/nastool/Cloud%20Sync/1.Alist/wget/nastool/video.tar.gz -O video.tar.gz
 # 检测是否下载
 if [ -f docker.tar.gz -a -f video.tar.gz ]; then
     yellow "下载已完成！"
