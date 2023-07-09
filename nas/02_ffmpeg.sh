@@ -19,7 +19,7 @@ mkdir $ip_address1/jellyfin/ffmpeg
 rm -rf ffmpeg-git-amd64-static.tar.xz
 
 # 下载ffmpeg
-wget -O ffmpeg-git-amd64-static.tar.xz https://d.nastool.work/d/aliyun/Cloud%20Sync/1.Alist/wget/nastool/ffmpeg-git-amd64-static.tar.xz
+wget -O ffmpeg-git-amd64-static.tar.xz https://d.juway.top/d/nastool/Cloud%20Sync/1.Alist/wget/nastool/ffmpeg-git-amd64-static.tar.xz
 
 # 原下载地址备份https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
 yellow "解压中，请稍后..."
