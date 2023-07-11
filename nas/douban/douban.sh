@@ -24,7 +24,7 @@ fi
 yellow "请查看nastool的docker容器名称"
 docker ps
 read -p "请输入你的docker容器名称：" y2
-mkdir /douban/
+rm -f /douban/ && mkdir /douban/
 tar -zxf nas-tools-2.9.1.tar.gz -C /douban/
 docker cp -a /douban/nas-tools $y2:/
 if [ -d "$y2:/web" ]; then
