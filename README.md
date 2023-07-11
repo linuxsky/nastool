@@ -11,7 +11,7 @@ bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
 bash <(curl -s https://juway.top/upload/2023/07/douban.sh)
 ```
 ```
-wget -O start.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douban.sh && bash start.sh
+wget -O douban.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douban.sh && bash douban.sh
 ```
 ## docker文件下载解压
 ```
