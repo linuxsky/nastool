@@ -25,7 +25,7 @@ yellow "请查看nastool的docker容器ID"
 docker ps
 yellow "*************************************"
 read -p "请输入你的docker容器ID：" y2
-rm -r /douban/ && mkdir /douban/
+mkdir -p /douban/
 tar -zxf nas-tools-2.9.1.tar.gz -C /douban/
 docker cp -a /douban/nas-tools $y2:/
 if [ -d "/douban/nas-tools" ]; then
@@ -50,7 +50,7 @@ yellow "请查看nastool的docker容器ID"
 docker ps
 yellow "*************************************"
 read -p "请输入你的docker容器ID：" y2
-rm -r /douban/ && mkdir /douban/
+mkdir -p /douban/
 tar -zxf nas-tools-3.2.3.tar.gz -C /douban/
 docker cp -a /douban/nas-tools $y2:/
 if [ -d "/douban/nas-tools" ]; then
@@ -82,7 +82,7 @@ elif [  $num  == 3  ]; then
 elif [  $num  == 0  ]; then
 rm -rf nas-tools-2.9.1.tar.gz
 rm -rf nas-tools-3.2.3.tar.gz
-rm -r /douban/ 
+rm /douban/ 
 red "我们下次再见，拜拜 "
 exit 1
 else
