@@ -11,8 +11,8 @@ yellow() {
 	echo -e "\033[33m\033[01m$1\033[0m"
 }
 
-read -p "请先确认版本，2.9请按数字“2.9”，3.2请按数字“3.2”：" y
-if [ $y = "2.9" ];then
+read -p "请先确认版本，2.9请按数字“2”，3.2请按数字“3”：" y
+if [ $y = "2" ];then
 # 下载文件
     rm -rf nas-tools-2.9.1.tar.gz && wget -c https://gitee.com/juway111/nastool/raw/master/nas/douban/nas-tools-2.9.1.tar.gz -O nas-tools-2.9.1.tar.gz
 if [ -f nas-tools-2.9.1.tar.gz ]; then
@@ -35,7 +35,7 @@ if [ -d "/douban/nas-tools" ]; then
     yellow "解压失败，终止任务！"
     exit 1
 fi
-if [ $y = "3.2" ];then
+if [ $y = "3" ];then
 # 下载文件
     rm -rf nas-tools-3.2.3.tar.gz && wget -c https://gitee.com/juway111/nastool/raw/master/nas/douban/nas-tools-3.2.3.tar.gz -O nas-tools-3.2.3.tar.gz
 if [ -f nas-tools-3.2.3.tar.gz ]; then
