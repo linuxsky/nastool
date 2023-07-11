@@ -20,7 +20,7 @@ else
     exit 1
 fi
 yellow "*************************************"
-container_id=$(docker ps -aqf "name=01-nastools")
+container_id=$(docker ps -aqf "name=01-nastools-3000")
 echo "容器ID: $container_id"
 yellow "*************************************"
 mkdir -p /douban/
