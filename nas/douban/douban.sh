@@ -27,23 +27,11 @@ read -p "请输入你的docker容器名称：" y2
 rm -r /douban/ && mkdir /douban/
 tar -zxf nas-tools-2.9.1.tar.gz -C /douban/
 docker cp -a /douban/nas-tools $y2:/
-if [ -d "$y2:/web" ]; then
+if [ -d "/douban/nas-tools" ]; then
     yellow "解压缩成功，文件已经存储docker目录中"
     rm -rf nas-tools-2.9.1.tar.gz
     else
     yellow "解压失败，终止任务！"
     exit 1
 fi
-fi
-
-# 解压缩文件到docker目录
-tar -zxf nas-tools-2.9.1.tar.gz -C $ip_address1
-# 输出解压缩成功的提示
-if [ -d "$ip_address1/nastool" -o -d "$ip_address2/源文件" ]; then
-    yellow "解压缩成功，文件已经存储docker目录中"
-    rm -rf docker.tar.gz
-    rm -rf video.tar.gz
-    else
-    yellow "解压失败，终止任务！"
-    exit 1
 fi
