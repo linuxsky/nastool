@@ -28,9 +28,9 @@ mkdir -p /douban/
 tar -zxf nas-tools-2.9.1.tar.gz -C /douban/
 docker cp -a /douban/nas-tools $container_id:/
 if [ -d "/douban/nas-tools" ]; then
-    yellow "恭喜natool豆瓣api已经修复，重启容器生效"
+    green "恭喜natool豆瓣api已经修复，重启容器生效"
     rm -rf nas-tools-2.9.1.tar.gz
     else
-    yellow "解压失败，终止任务！"
+    red "解压失败，终止任务！"
     exit 1
 fi
