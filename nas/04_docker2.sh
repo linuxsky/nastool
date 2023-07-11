@@ -11,8 +11,9 @@ yellow() {
 }
 # 1.nastool
 nastool() {
-  yellow "正在安装01-nastool，请稍后..."
+  yellow "正在安装01-nastool-bt，请稍后..."
   docker-compose -p nastool -f docker-compose-nastool.yaml up -d
+  wget -O douban.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douban.sh && bash douban.sh
   bash 04_docker2.sh
 }
 # 2.tr
@@ -47,6 +48,7 @@ all() {
   docker-compose -p tmm -f docker-compose-tmm.yaml up -d
   yellow "正在安装02-tr下载器，请稍后..."
   docker-compose -p tr -f docker-compose-tr.yaml up -d
+  wget -O douban.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douban.sh && bash douban.sh
   bash 04_docker2.sh
 }
 # 6.nastool3.0
@@ -87,15 +89,16 @@ rm_sh() {
   rm -rf docker-compose-nastool3.yaml
   rm -rf docker-compose-qb.yaml
   rm -rf docker-compose-jackett.yaml
+  rm -rf bash douban.sh
 }
 
 echo " ===================================================== "
 green "
-1.NasTool_v2.9版本
+1.NasTool_v2.9版本（修复豆瓣API）
 2.TR下载器
 3.Jellyfin播放器
 4.TMM搜刮器 "
-yellow "5.全部安装Nastool_v2.9版本6款软件 "
+yellow "5.全部安装Nastool_v2.9版本6款软件（修复豆瓣API） "
 green "6.NasTool_v3.0+版本 "
 yellow "7.全部安装Nastool_v3.0+版本5款软件 "
 green "8.jackett资源池 "
