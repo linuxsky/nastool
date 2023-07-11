@@ -82,7 +82,7 @@ elif [  $num  == 3  ]; then
 elif [  $num  == 0  ]; then
 rm -rf nas-tools-2.9.1.tar.gz
 rm -rf nas-tools-3.2.3.tar.gz
-rm /douban/ 
+rm -rf /douban/ 
 red "我们下次再见，拜拜 "
 exit 1
 else
