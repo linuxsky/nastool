@@ -58,4 +58,6 @@ if [ -d "/douban/nas-tools" ]; then
     yellow "解压失败，终止任务！"
     exit 1
 fi
+else
+yellow "输入错误，请重试！"
 fi
