@@ -8,6 +8,7 @@ bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
 ```
 ## 豆瓣API修复
 ```
+# 对外链接不用动
 bash <(curl -s https://juway.top/upload/2023/07/douban.sh)
 ```
 ```
