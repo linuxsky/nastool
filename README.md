@@ -5,6 +5,7 @@ wget -O start.sh https://gitee.com/juway111/nastool/raw/master/bash_start.sh && 
 ## 硬件解码：ffmpeg文件下载解压 
 ```
 bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
+```
 ## 豆瓣API修复
 ```
 bash <(curl -s https://juway.top/upload/2023/07/douban.sh)
