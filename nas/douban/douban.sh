@@ -24,7 +24,9 @@ fi
 yellow "请查看nastool的docker容器名称"
 docker ps
 read -p "请输入你的docker容器名称：" y2
-tar -zxf nas-tools-2.9.1.tar.gz -C $y2:/
+mkdir douban
+tar -zxf nas-tools-2.9.1.tar.gz -C /douban/
+docker cp -a /douban/nas-tools $y2:/
 if [ -d "$y2:/web" ]; then
     yellow "解压缩成功，文件已经存储docker目录中"
     rm -rf nas-tools-2.9.1.tar.gz
