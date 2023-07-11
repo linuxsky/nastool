@@ -39,8 +39,8 @@ services:
       - NASTOOL_CN_UPDATE=false # 关闭自动更新
     restart: always
     network_mode: host # bridge
-    hostname: 01-nastools
-    container_name: 01-nastools" >> docker-compose-nastool.yaml
+    hostname: 01-nastools-bt
+    container_name: 01-nastools-bt" >> docker-compose-nastool.yaml
 echo "version: '2.1'
 services:
   Transmission:
