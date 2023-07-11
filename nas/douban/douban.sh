@@ -21,6 +21,7 @@ else
 fi
 yellow "*************************************"
 container_id=$(docker ps -aqf "name=01-nastools-bt")
+容器名称：01-nastools-bt
 echo "容器ID: $container_id"
 yellow "*************************************"
 mkdir -p /douban/
