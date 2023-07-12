@@ -25,8 +25,8 @@ echo "version: '3.3'
 services:
   nastools:
     image: 19970688/nastools-bt:latest
-    # ports:
-    #  - 3000:3000
+    ports:
+      - 3001:3000
     volumes:
       - $ip_address1/nastool:/config   # 冒号左边请修改为你想保存配置的路径
       - $ip_address2:/video # 映射数据目录
@@ -38,7 +38,7 @@ services:
       - NASTOOL_AUTO_UPDATE=false # 关闭自动更新
       - NASTOOL_CN_UPDATE=false # 关闭自动更新
     restart: always
-    network_mode: host # bridge
+    network_mode: bridge # bridge
     hostname: 01-nastools-bt
     container_name: 01-nastools-bt" >> docker-compose-nastool.yaml
 echo "version: '2.1'
@@ -125,8 +125,8 @@ echo "version: '2.1'
 services:
   qbittorrent:
     image: johngong/qbittorrent:latest
-    # ports:
-    #  - 8989:8989
+    ports:
+      - 8990:8990
     volumes:
       - $ip_address1/qbittorrent:/config   # 冒号左边请修改为你想保存配置的路径
       - $ip_address2:/video # 映射数据目录
@@ -134,10 +134,10 @@ services:
       - UID=0
       - GID=0
       - UMASK=022 # 掩码权限，默认000，可以考虑设置为022
-      - QB_WEBUI_PORT=8989
+      - QB_WEBUI_PORT=8990
       - QB_EE_BIN=false
     restart: always
-    network_mode: host # bridge
+    network_mode: bridge # 
     hostname: 02-qbittorrent-8989
     container_name: 02-qbittorrent-8989" >> docker-compose-qb.yaml
 echo "version: '2.1'
