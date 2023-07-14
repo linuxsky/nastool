@@ -27,8 +27,8 @@ echo "容器ID: $container_id"
 yellow "*************************************"
 
 rm -rf /douban/ && rm -rf douban.sh&& mkdir -p /douban/
-tar -zxf nas-tools-2.9.1.tar.gz -C /douban/nas-tools/
-docker cp -a /douban/nas-tools $container_id:/
+tar -zxf nas-tools-2.9.1.tar.gz -C /douban/
+docker cp -a "/douban/nas-tools" $container_id:/
 if [ -d "/douban/nas-tools" ]; then
     green "恭喜natool豆瓣api已经修复，正在重启容器..."
     docker restart $container_id
