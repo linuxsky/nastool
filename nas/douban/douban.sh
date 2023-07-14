@@ -19,12 +19,14 @@ else
     yellow "下载失败，终止任务！"
     exit 1
 fi
+
 yellow "*************************************"
 container_id=$(docker ps -aqf "name=01-nastools-bt")
 echo "容器名称：01-nastools-bt"
 echo "容器ID: $container_id"
 yellow "*************************************"
-rm -rf /douban/ && mkdir -p /douban/
+
+rm -rf /douban/ && rm -rf douban.sh&& mkdir -p /douban/
 tar -zxf nas-tools-2.9.1.tar.gz -C /douban/
 docker cp -a /douban/nas-tools $container_id:/
 if [ -d "/douban/nas-tools" ]; then
