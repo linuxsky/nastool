@@ -13,7 +13,6 @@ yellow() {
 nastool() {
   yellow "正在安装01-nastool-bt，请稍后..."
   docker-compose -p nastool -f docker-compose-nastool.yaml up -d
-  wget -O douban.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douban.sh && bash douban.sh
   bash 04_docker2.sh
 }
 # 2.tr
@@ -48,7 +47,6 @@ all() {
   docker-compose -p tmm -f docker-compose-tmm.yaml up -d
   yellow "正在安装02-tr下载器，请稍后..."
   docker-compose -p tr -f docker-compose-tr.yaml up -d
-  wget -O douban.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douban.sh && bash douban.sh
   bash 04_docker2.sh
 }
 # 6.nastool3.0
