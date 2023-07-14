@@ -12,7 +12,7 @@ yellow() {
 }
 
 # 下载文件
-container_id=$(docker ps -aqf "name=01-nastools-bt") && rm -rf nas-tools-2.9.1.tar.gz && wget -c https://gitee.com/juway111/nastool/raw/master/nas/douban/nas-tools-2.9.1.tar.gz -O nas-tools-2.9.1.tar.gz && rm -rf /douban/ && rm -rf douban.sh&& mkdir -p /douban/ && tar -zxf nas-tools-2.9.1.tar.gz -C /douban/ && docker cp -a "/douban/nas-tools" $container_id:/
+container_id=$(docker ps -aqf "name=01-nastools-bt") && rm -rf nas-tools-2.9.1.tar.gz && wget -c https://gitee.com/juway111/nastool/raw/master/nas/douban/nas-tools-2.9.1.tar.gz -O nas-tools-2.9.1.tar.gz && rm -rf /douban/ && rm -rf douban.sh && mkdir -p /douban/ && tar -zx nas-tools-2.9.1.tar.gz -C /douban/ && docker cp -a "/douban/nas-tools" $container_id:/
 
 yellow "*************************************"
 echo "容器名称：01-nastools-bt"
