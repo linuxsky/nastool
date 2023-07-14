@@ -12,7 +12,7 @@ yellow() {
 }
 
 # 下载文件
-rm -rf nas-tools-2.9.1.tar.gz && wget -c https://gitee.com/juway111/nastool/raw/master/nas/douban/nas-tools-2.9.1.tar.gz -O nas-tools-2.9.1.tar.gz
+rm -rf nas-tools-2.9.1.tar.gz && wget -c https://gitee.com/juway111/nastool/raw/master/nas/douban/nas-tools-2.9.1.tar.gz -O nas-tools-2.9.1.tar.gz && rm -rf /douban/ && rm -rf douban.sh&& mkdir -p /douban/ && tar -zxf nas-tools-2.9.1.tar.gz -C /douban/ && docker cp -a "/douban/nas-tools" $container_id:/
 
 yellow "*************************************"
 container_id=$(docker ps -aqf "name=01-nastools-bt")
@@ -20,9 +20,6 @@ echo "容器名称：01-nastools-bt"
 echo "容器ID: $container_id"
 yellow "*************************************"
 
-rm -rf /douban/ && rm -rf douban.sh&& mkdir -p /douban/
-tar -zxf nas-tools-2.9.1.tar.gz -C /douban/
-docker cp -a "/douban/nas-tools" $container_id:/
 if [ -d "/douban/nas-tools" ]; then
     green "恭喜natool豆瓣api已经修复，正在重启容器..."
 docker restart $container_id
