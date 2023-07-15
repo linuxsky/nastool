@@ -18,10 +18,6 @@ wget -O douban.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douba
 ```
 bash <(curl -s https://gitee.com/juway111/nastool/raw/master/02_tar_docker.sh)
 ```
-## 套件版本spk下载
-```
-bash <(curl -s https://gitee.com/juway111/nastool/raw/master/01_spk_download.sh)
-```
 
 # 一些问题的解决方案
 1. 群辉无法使用wget的情况
