@@ -92,13 +92,13 @@ rm_sh() {
 
 echo " ===================================================== "
 green "
-1.NasTool_v2.9版本（修复豆瓣API）
+1.NasTool_v2.9版本
 2.TR下载器
 3.Jellyfin播放器
 4.TMM搜刮器 "
-yellow "5.全部安装Nastool_v2.9版本6款软件（修复豆瓣API） "
-green "6.NasTool_v3.0+版本 "
-yellow "7.全部安装Nastool_v3.0+版本5款软件 "
+yellow "5.全部安装Nastool_v2.9版本6款软件 "
+green "6.NasTool_v3.0+版本（修复豆瓣API） "
+yellow "7.全部安装Nastool_v3.0+版本5款软件（修复豆瓣API） "
 green "8.jackett资源池 "
 echo "0.清除缓存并返回上一层
 
