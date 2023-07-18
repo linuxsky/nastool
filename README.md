@@ -16,7 +16,7 @@ wget -O douban.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douba
 ```
 ## docker文件下载解压
 ```
-bash <(curl -s https://gitee.com/juway111/nastool/raw/master/02_tar_docker.sh)
+bash <(curl -s https://gitee.com/juway111/nastool/raw/master/Download_docker_tar_gz.sh)
 ```
 
 # 一些问题的解决方案
