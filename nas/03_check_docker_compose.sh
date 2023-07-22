@@ -4,8 +4,8 @@
 yellow() {
 	echo -e "\033[33m\033[01m$1\033[0m"
 }
-# 检查docker-compose是否已安装  
-result=$(docker compose -v)  
+# 检查docker-compose是否已安装
+result=$(docker-compose --version)
   
 # 检查输出是否包含"docker-compose"字符串
 if ! [[ $result == *"version"* ]]; then    # 如果不包含"version"字符串，则安装docker-compose  
