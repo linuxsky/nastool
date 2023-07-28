@@ -159,6 +159,27 @@ services:
     network_mode: host # bridge
     hostname: 05-jackett-9117
     container_name: 05-jackett-9117" >> docker-compose-jackett.yaml
+echo "version: '3.3'
+services:
+  nastools3.2.5:
+    image: nastool/nas-tools:latest
+    # ports:
+    #  - 3000:3000
+    volumes:
+      - $ip_address1/nastools/config-3.2:/config   # 冒号左边请修改为你想保存配置的路径
+      - $ip_address2:/video # 映射数据目录
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Asia/Shanghai
+      - UMASK=022 # 掩码权限，默认000，可以考虑设置为022
+      - NASTOOL_AUTO_UPDATE=true # 自动更新
+      - NASTOOL_CN_UPDATE=true # 自动更新
+      - REPO_URL=https://gitee.com/juway111/unlock-tool.git # 更新地址
+    restart: always
+    network_mode: host # bridge
+    hostname: 01-nastools-3.2.5
+    container_name: 01-nastools-3.2.5" >> docker-compose-nastool3.2.5.yaml
 
 # 确认目录是否正确
 green "==================================================="
