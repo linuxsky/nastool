@@ -75,6 +75,19 @@ jackett() {
   docker-compose -p jackett -f docker-compose-jackett.yaml up -d
   bash 04_docker2.sh
 }
+# 9.nastool3.2.5
+nastool325() {
+  yellow "正在安装01-nastool-3.2.5，请稍后..."
+  docker-compose -p nastool3.2.5 -f docker-compose-nastool3.2.5.yaml up -d
+  yellow "正在安装03-jellyfin播放器，请稍后..."
+  docker-compose -p jellyfin -f docker-compose-jellyfin.yaml up -d
+  yellow "正在安装02-qb下载器，请稍后..."
+  docker-compose -p qb -f docker-compose-qb.yaml up -d
+  yellow "正在安装04-tmm搜刮器，请稍后..."
+  docker-compose -p tmm -f docker-compose-tmm.yaml up -d
+  yellow "正在安装02-tr下载器，请稍后..."
+  docker-compose -p tr -f docker-compose-tr.yaml up -d
+  bash 04_docker2.sh
 
 # 0.清除缓存
 rm_sh() {
@@ -87,19 +100,22 @@ rm_sh() {
   rm -rf docker-compose-nastool3.yaml
   rm -rf docker-compose-qb.yaml
   rm -rf docker-compose-jackett.yaml
+  rm -rf docker-compose-nastool3.2.5.yaml
   rm -rf bash douban.sh
 }
 
 echo " ===================================================== "
+yellow "已经全部修复好大和岛，豆瓣图片问题"
 green "
-1.NasTool_v2.9.1_优化版（修复豆瓣API）
+1.NasTool_v2.9.1_优化版
 2.TR下载器
 3.Jellyfin播放器
 4.TMM搜刮器 "
-yellow "5.全部安装Nastool_v2.9_优化版6款软件（修复豆瓣API）"
-green "6.NasTool_v3.0+版本（修复豆瓣API） "
-yellow "7.全部安装Nastool_v3.0+版本5款软件（修复豆瓣API） "
+yellow "5.全部安装Nastool_v2.9_优化版6款软件"
+green "6.NasTool_v3.0+版本"
+yellow "7.全部安装Nastool_v3.0+认证版5款软件"
 green "8.jackett资源池 "
+yellow "9.全部安装Nastool_v3.2.5定制版5款软件"
 echo "0.清除缓存并返回上一层
 
 ======================================================"
@@ -121,6 +137,8 @@ elif [  $num  == 7  ]; then
 nastool3_all
 elif [  $num  == 8  ]; then
 jackett
+elif [  $num  == 9  ]; then
+nastool325
 elif [  $num  == 0  ]; then
 red " 清除缓存中，请稍等..."
 rm_sh
