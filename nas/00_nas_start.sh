@@ -116,9 +116,7 @@ elif [  $num  == 0  ]; then
 	red "我们下次再见，拜拜"
 	exit 1
 else
-	red "请输入正确的数字，启动对应功能[0-6]: "
-	yellow "请输入正确的数字，启动对应功能[0-6]: "
-	green "请输入正确的数字，启动对应功能[0-6]: "
+	red "输入错误！请输入正确的数字，启动对应功能！"
 fi
 	bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/00_nas_start.sh)
     bash 00_nas_start.sh
