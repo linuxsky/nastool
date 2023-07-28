@@ -163,7 +163,7 @@ services:
     container_name: 05-jackett-9117" >> docker-compose-jackett.yaml
 echo "version: '3.3'
 services:
-  nastools3.2.5:
+  nastools_unlock_3:
     image: nastool/nas-tools:latest
     # ports:
     #  - 3000:3000
