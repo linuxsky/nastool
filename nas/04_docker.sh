@@ -1,13 +1,13 @@
 #!/bin/bash
 # 增加颜色
 green() {
-	echo -e "\033[32m\033[01m$1\033[0m"
+    echo -e "\033[32m\033[01m$1\033[0m"
 }
 red() {
-	echo -e "\033[31m\033[01m$1\033[0m"
+    echo -e "\033[31m\033[01m$1\033[0m"
 }
 yellow() {
-	echo -e "\033[33m\033[01m$1\033[0m"
+    echo -e "\033[33m\033[01m$1\033[0m"
 }
 # 清除缓存
 rm -rf docker-compose-nastool.yaml
@@ -18,9 +18,11 @@ rm -rf docker-compose-nastool3.yaml
 rm -rf docker-compose-qb.yaml
 rm -rf docker-compose-jackett.yaml
 rm -rf docker-compose-nastool3.2.5.yaml
+
 # 读取输入的目录和需要挂载的容器名
 read -p "请输入你的docker目录: " ip_address1
 read -p "请输入你的video 目录: " ip_address2
+
 # 创建docker-compose
 echo "version: '3.3'
 services:
@@ -212,21 +214,20 @@ if [ -d "$ip_address1/nastool" -o -d "$ip_address2/源文件" ]; then
     yellow "解压缩成功，文件已经存储docker目录中"
     rm -rf docker.tar.gz
     rm -rf video.tar.gz
-    else
+else
     yellow "解压失败，终止任务！"
     exit 1
 fi
 fi
 # 安装容器
 if [ "$y" = "y" ];then
-rm -rf docker.tar.gz
-rm -rf video.tar.gz
-yellow "所有文件已就绪！正在清除下载缓存！2秒后进入doker安装界面..."
-sleep 2
-  bash 04_docker2.sh
+    rm -rf docker.tar.gz
+    rm -rf video.tar.gz
+    yellow "配置文件已就绪！已清除下载缓存！正在进入doker安装界面..."
+    bash 04_docker2.sh
 elif [ "$y" = "n" ];then
-  red "目录设置错误，请重新设置！"
-  bash 04_docker.sh
+    red "目录设置错误，请重新设置！"
+    bash 04_docker.sh
 else
     echo "输入非法指令"
 fi
