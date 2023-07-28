@@ -17,6 +17,7 @@ rm -rf docker-compose-tmm.yaml
 rm -rf docker-compose-nastool3.yaml
 rm -rf docker-compose-qb.yaml
 rm -rf docker-compose-jackett.yaml
+rm -rf docker-compose-nastool3.2.5.yaml
 # 读取输入的目录和需要挂载的容器名
 read -p "请输入你的docker目录: " ip_address1
 read -p "请输入你的video 目录: " ip_address2
