@@ -150,7 +150,6 @@ services:
     #  - 9117:9117
     volumes:
       - $ip_address1/jackett:/config   # 冒号左边请修改为你想保存配置的路径
-      - $ip_address1/jackett/torrent:/downloads # 映射种子目录
     environment:
       - UID=0
       - GID=0
