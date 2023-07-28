@@ -87,7 +87,7 @@ jackett() {
 # 9.安装nastool-3.2.5解锁版全部
 nastool325() {
     yellow "正在安装01-nastool-3.2.5，请稍后..."
-    docker-compose -p nastool3.2.5 -f docker-compose-nastool3.2.5.yaml up -d
+    docker-compose -p nastool3.2.5 -f docker-compose-nastools_unlock_3.yaml up -d
     yellow "正在安装03-jellyfin播放器，请稍后..."
     docker-compose -p jellyfin -f docker-compose-jellyfin.yaml up -d
     yellow "正在安装02-qb下载器，请稍后..."
@@ -110,7 +110,7 @@ rm_sh() {
     rm -rf docker-compose-nastool3.yaml
     rm -rf docker-compose-qb.yaml
     rm -rf docker-compose-jackett.yaml
-    rm -rf docker-compose-nastool3.2.5.yaml
+    rm -rf docker-compose-nastools_unlock_3.yaml
 }
 
 echo " ===================================================== "
