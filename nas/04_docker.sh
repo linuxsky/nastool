@@ -193,7 +193,7 @@ read -p "首次安装，须下载配置文件，按 Y 下载：" y2
 read -p "若目录正确，请按 Y 继续，按 N 重试 ：" y
 
 # 下载文件
-if [ $y2 = "y" ];then
+if [ "$y2" = "y" ];then
     rm -rf docker.tar.gz && wget -c https://d.juway.top/d/nastool/Cloud%20Sync/1.Alist/wget/nastool/docker.tar.gz -O docker.tar.gz
     rm -rf video.tar.gz && wget -c https://d.juway.top/d/nastool/Cloud%20Sync/1.Alist/wget/nastool/video.tar.gz -O video.tar.gz
 # 检测是否下载
@@ -218,13 +218,13 @@ if [ -d "$ip_address1/nastool" -o -d "$ip_address2/源文件" ]; then
 fi
 fi
 # 安装容器
-if [ $y = "y" ];then
+if [ "$y" = "y" ];then
 rm -rf docker.tar.gz
 rm -rf video.tar.gz
 yellow "所有文件已就绪！正在清除下载缓存！2秒后进入doker安装界面..."
 sleep 2
   bash 04_docker2.sh
-elif [ $y = "n" ];then
+elif [ "$y" = "n" ];then
   red "目录设置错误，请重新设置！"
   bash 04_docker.sh
 else
