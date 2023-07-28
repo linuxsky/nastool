@@ -181,7 +181,7 @@ services:
     restart: always
     network_mode: host # bridge
     hostname: 01-nastools-3.2.5
-    container_name: 01-nastools-3.2.5" >> docker-compose-nastool3.2.5.yaml
+    container_name: 01-nastools-3.2.5" >> docker-compose-nastools_unlock_3.yaml
 
 # 确认目录是否正确
 green "==================================================="
