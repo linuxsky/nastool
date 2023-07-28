@@ -120,30 +120,31 @@ echo "0.清除缓存并返回上一层
 
 ======================================================"
 
-read -p  " 请输入以上数字，安装对应容器: " num
-if [  $num  == 1  ] ; then
-    nastool
-elif [  $num  == 2  ]; then
-    tr
-elif [  $num  == 3  ]; then
-    jellyfin
-elif [  $num  == 4  ]; then
-    tmm
-elif [  $num  == 5  ]; then
-        all
-elif [  $num  == 6  ]; then
-nastool3
-elif [  $num  == 7  ]; then
-        nastool3_all
-elif [  $num  == 8  ]; then
-jackett
-elif [  $num  == 9  ]; then
-    nastool325
-elif [  $num  == 0  ]; then
-    rm_sh
-    red " 清除缓存中，请稍等..."
-    exit it
-else
-    red "****输入错误！请输入正确的数字，安装对应容器****" 
-    bash 04_docker2.sh
+read -p " 请输入以上数字，安装对应容器: " num  
+  
+if [ "$num" -eq 1 ]; then  
+    nastool  
+elif [ "$num" -eq 2 ]; then  
+    tr  
+elif [ "$num" -eq 3 ]; then  
+    jellyfin  
+elif [ "$num" -eq 4 ]; then  
+    tmm  
+elif [ "$num" -eq 5 ]; then  
+    all  
+elif [ "$num" -eq 6 ]; then  
+    nastool3  
+elif [ "$num" -eq 7 ]; then  
+    nastool3_all  
+elif [ "$num" -eq 8 ]; then  
+    jackett  
+elif [ "$num" -eq 9 ]; then  
+    nastool325  
+elif [ "$num" -eq 0 ]; then  
+    rm_sh  
+    red " 清除缓存中，请稍等..."  
+    exit  
+else  
+    red "****输入错误！请输入正确的数字，安装对应容器****"  
+    bash 04_docker2.sh  
 fi
