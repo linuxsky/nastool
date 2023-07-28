@@ -49,7 +49,7 @@ docker() {
 
 # 5.核显ls /dev/dri测试
 hexian() {
-    yellow "检查是否正确驱动核显。"
+    yellow "驱动核显检测结果："
 # 检查 ls /dev/dri 命令输入的文字是否一致
 if [[ $(ls /dev/dri | grep "^renderD128$") == "renderD128" ]]; then
     ls /dev/dri && green "恭喜，本设备已经加载核显驱动。
@@ -88,9 +88,9 @@ green "
 1.查看本机公网ipv4地址"
 yellow "2.添加api.themoviedb.org到hosts"
 green "3.手动编辑hosts"
-yellow "4.自动安装Nastool全套软件
-5.检测本设备是否支持核显硬件解码"
-green "6.安装硬件解码FFmpeg"
+yellow "4.自动安装Nastool全套软件"
+green "5.检测本设备是否支持核显硬件解码
+6.安装硬件解码FFmpeg"
 red "99.删除所有docker容器和镜像(谨慎选择)"
 echo "0.返回首页
 
