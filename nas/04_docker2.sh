@@ -9,31 +9,31 @@ red() {
 yellow() {
 	echo -e "\033[33m\033[01m$1\033[0m"
 }
-# 1.nastool
+# 1.安装nastool
 nastool() {
   yellow "正在安装01-nastool-bt，请稍后..."
   docker-compose -p nastool -f docker-compose-nastool.yaml up -d
   bash 04_docker2.sh
 }
-# 2.tr
+# 2.安装tr
 tr() {
   yellow "正在安装02-tr下载器，请稍后..."
   docker-compose -p tr -f docker-compose-tr.yaml up -d
   bash 04_docker2.sh
 }
-# 3.jellyfin
+# 3.安装jellyfin
 jellyfin() {
   yellow "正在安装03-jellyfin播放器，请稍后..."
   docker-compose -p jellyfin -f docker-compose-jellyfin.yaml up -d
   bash 04_docker2.sh
 }
-# 4.tmm
+# 4.安装tmm
 tmm() {
   yellow "正在安装04-tmm搜刮器，请稍后..."
   docker-compose -p tmm -f docker-compose-tmm.yaml up -d
   bash 04_docker2.sh
 }
-# 5.all
+# 5.安装所有2.9.1版本
 all() {
   yellow "正在安装01-nastool，请稍后..."
   docker-compose -p nastool -f docker-compose-nastool.yaml up -d
@@ -49,13 +49,13 @@ all() {
   docker-compose -p tr -f docker-compose-tr.yaml up -d
   bash 04_docker2.sh
 }
-# 6.nastool3.0
+# 6.安装nastool3.0
 nastool3() {
   yellow "正在安装01-nastool-3.0，请稍后..."
   docker-compose -p nastool3 -f docker-compose-nastool3.yaml up -d
   bash 04_docker2.sh
 }
-# 7.nastool3.0全部安装
+# 7.安装nastool3.0全部
 nastool3_all() {
   yellow "正在安装01-nastool-3.0，请稍后..."
   docker-compose -p nastool3 -f docker-compose-nastool3.yaml up -d
@@ -69,13 +69,13 @@ nastool3_all() {
   docker-compose -p tr -f docker-compose-tr.yaml up -d
   bash 04_docker2.sh
 }
-# 8.jackett
+# 8.安装jackett
 jackett() {
   yellow "正在安装05-jackett资源池，请稍后..."
   docker-compose -p jackett -f docker-compose-jackett.yaml up -d
   bash 04_docker2.sh
 }
-# 9.nastool3.2.5
+# 9.安装nastool-3.2.5解锁版全部
 nastool325() {
   yellow "正在安装01-nastool-3.2.5，请稍后..."
   docker-compose -p nastool3.2.5 -f docker-compose-nastool3.2.5.yaml up -d
@@ -120,33 +120,30 @@ echo "0.清除缓存并返回上一层
 
 ======================================================"
 
-read -p  " 请输入以上数字，安装对应容器: " num 
+read -p  " 请输入以上数字，安装对应容器: " num
 if [  $num  == 1  ] ; then
-nastool
+    nastool
 elif [  $num  == 2  ]; then
-tr
+    tr
 elif [  $num  == 3  ]; then
-jellyfin
+    jellyfin
 elif [  $num  == 4  ]; then
-tmm
+    tmm
 elif [  $num  == 5  ]; then
-all
+        all
 elif [  $num  == 6  ]; then
 nastool3
 elif [  $num  == 7  ]; then
-nastool3_all
+        nastool3_all
 elif [  $num  == 8  ]; then
 jackett
 elif [  $num  == 9  ]; then
-nastool325
+    nastool325
 elif [  $num  == 0  ]; then
-red " 清除缓存中，请稍等..."
-rm_sh
-exit
-# 序号输入错误，提示并循环
+    rm_sh
+    red " 清除缓存中，请稍等..."
+    exit it
 else
-red "请输入正确的数字，安装对应容器" 
-yellow "请输入正确的数字，安装对应容器 " 
-green "请输入正确的数字，安装对应容器" 
-bash 04_docker2.sh
+    red "****输入错误！请输入正确的数字，安装对应容器****" 
+    bash 04_docker2.sh
 fi
