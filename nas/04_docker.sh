@@ -180,8 +180,8 @@ services:
       - REPO_URL=https://gitee.com/juway111/unlock-tool.git # 更新地址
     restart: always
     network_mode: host # bridge
-    hostname: 01-nastools-3.2.5
-    container_name: 01-nastools-3.2.5" >> docker-compose-nastools_unlock_3.yaml
+    hostname: 01-nastools_unlock_3
+    container_name: 01-nastools_unlock_3" >> docker-compose-nastools_unlock_3.yaml
 
 # 确认目录是否正确
 green "==================================================="
