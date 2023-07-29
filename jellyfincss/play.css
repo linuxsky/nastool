@@ -1,3 +1,9 @@
+# 修复播放界面控制器排版混乱
 .osdControls .flex.flex-direction-row.align-items-center {
     display: flex;
+}
+
+# 修复进度条长度太短问题
+.layout-desktop .osdControls {
+    max-width: 100%;
 }
