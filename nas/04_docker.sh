@@ -17,7 +17,7 @@ rm -rf docker-compose-tmm.yaml
 rm -rf docker-compose-nastool3.yaml
 rm -rf docker-compose-qb.yaml
 rm -rf docker-compose-jackett.yaml
-rm -rf docker-compose-nastool3.2.5.yaml
+rm -rf docker-compose-nastools_unlock_3.yaml
 
 # 读取输入的目录和需要挂载的容器名
 read -p "请输入你的docker目录: " ip_address1
@@ -185,8 +185,6 @@ services:
 
 # 确认目录是否正确
 green "==================================================="
-docker --version
-echo $result
 echo -e "你输入的docker目录为: \033[33m$ip_address1\033[0m"
 echo -e "你输入的video 目录为: \033[33m$ip_address2\033[0m"
 yellow "1.请确认需安装的文件夹为空白或者没有重复文件夹
