@@ -126,7 +126,7 @@ yellow "5.全部安装Nastool_v2.9_优化版6款软件"
 green "6.NasTool_v3.0+版本"
 yellow "7.全部安装Nastool_v3.0+认证版5款软件"
 green "8.jackett资源池 "
-yellow "9.全部安装Nastool_unlock定制版5款软件"
+yellow "9.全部安装Nastool_unlock定制版6款软件"
 echo "0.清除缓存并返回上一层
 
 ======================================================"
