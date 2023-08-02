@@ -186,7 +186,7 @@ services:
 # 确认目录是否正确
 green "==================================================="
 docker --version
-docker-compose --version 
+echo -e result
 echo -e "你输入的docker目录为: \033[33m$ip_address1\033[0m"
 echo -e "你输入的video 目录为: \033[33m$ip_address2\033[0m"
 yellow "1.请确认需安装的文件夹为空白或者没有重复文件夹
