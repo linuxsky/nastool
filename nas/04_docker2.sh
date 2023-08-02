@@ -84,7 +84,7 @@ jackett() {
     bash 04_docker2.sh
 }
 
-# 9.安装nastool-3.2.5解锁版全部
+# 9.安装nastool-unlock解锁版全部
 nastool325() {
     yellow "正在安装01-nastool-3.2.5，请稍后..."
     docker-compose -p nastools_unlock_3 -f docker-compose-nastools_unlock_3.yaml up -d
@@ -96,6 +96,8 @@ nastool325() {
     docker-compose -p tmm -f docker-compose-tmm.yaml up -d
     yellow "正在安装02-tr下载器，请稍后..."
     docker-compose -p tr -f docker-compose-tr.yaml up -d
+    yellow "正在安装05-jackett资源池，请稍后..."
+    docker-compose -p jackett -f docker-compose-jackett.yaml up -d
     bash 04_docker2.sh
 }
 
@@ -124,7 +126,7 @@ yellow "5.全部安装Nastool_v2.9_优化版6款软件"
 green "6.NasTool_v3.0+版本"
 yellow "7.全部安装Nastool_v3.0+认证版5款软件"
 green "8.jackett资源池 "
-yellow "9.全部安装Nastool_v3.2.5定制版5款软件"
+yellow "9.全部安装Nastool_unlock定制版5款软件"
 echo "0.清除缓存并返回上一层
 
 ======================================================"
