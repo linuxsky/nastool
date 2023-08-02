@@ -56,7 +56,7 @@ if [[ $(ls /dev/dri | grep "^renderD128$") == "renderD128" ]]; then
 虽然有核显驱动，但是解码能力取决于核显能力哦！" && sleep 2
 else
 	red "抱歉，本设备没有核显驱动。
-建议您升级硬件或打驱动补丁哦！" && sleep 2
+本次检测结果仅用于告知客户知晓！" && sleep 2
 fi
 }
 
