@@ -168,7 +168,7 @@ services:
     # ports:
     #  - 3000:3000
     volumes:
-      - $ip_address1/nastools/config-3.2:/config   # 冒号左边请修改为你想保存配置的路径
+      - $ip_address1/nastools/config-unlock:/config   # 冒号左边请修改为你想保存配置的路径
       - $ip_address2:/video # 映射数据目录
     environment:
       - PUID=0
