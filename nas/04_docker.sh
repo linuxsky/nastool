@@ -177,7 +177,7 @@ services:
       - UMASK=022 # 掩码权限，默认000，可以考虑设置为022
       - NASTOOL_AUTO_UPDATE=true # 自动更新
       - NASTOOL_CN_UPDATE=true # 自动更新
-      - REPO_URL=https://gitee.com/juway111/unlock-tool.git # 更新地址
+      - REPO_URL=https://gitee.com/juway111/nas-tools-updata.git # 更新地址
     restart: always
     network_mode: host # bridge
     hostname: 01-nastools_unlock_3
