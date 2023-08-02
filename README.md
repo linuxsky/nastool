@@ -2,18 +2,12 @@
 ```
 wget -O start.sh https://gitee.com/juway111/nastool/raw/master/bash_start.sh && bash start.sh
 ```
+
 ## 硬件解码：ffmpeg文件下载解压 
 ```
 bash <(curl -s https://gitee.com/juway111/nastool/raw/master/nas/02_ffmpeg.sh)
 ```
-## 豆瓣API修复
-```
-# 对外链接不用动
-bash <(curl -s https://juway.top/upload/2023/07/douban.sh)
-```
-```
-wget -O douban.sh https://gitee.com/juway111/nastool/raw/master/nas/douban/douban.sh && bash douban.sh
-```
+
 ## docker文件下载解压
 ```
 bash <(curl -s https://gitee.com/juway111/nastool/raw/master/Download_docker_tar_gz.sh)
