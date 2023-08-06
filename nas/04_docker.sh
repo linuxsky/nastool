@@ -40,7 +40,7 @@ services:
       - UMASK=022 # 掩码权限，默认000，可以考虑设置为022
       - NASTOOL_AUTO_UPDATE=true # 开启自动更新
       - NASTOOL_CN_UPDATE=true # 开启自动更新
-      - REPO_URL=https://gitee.com/juway111/nas-tools-2.9.1.git # 更新地址
+      - REPO_URL=https://gitee.com/nobody114/Copy.git # 更新地址
     restart: always
     network_mode: host # bridge
     hostname: 01-nastools-bt
