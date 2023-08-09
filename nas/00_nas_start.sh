@@ -49,7 +49,7 @@ docker() {
 
 # 5.核显ls /dev/dri测试
 hexian() {
-    yellow "驱动核显检测结果："
+    yellow "  驱动核显检测结果："
 # 检查 ls /dev/dri 命令输入的文字是否一致
 if [[ $(ls /dev/dri | grep "^renderD128$") == "renderD128" ]]; then
     ls /dev/dri && green "  恭喜，本设备已经加载核显驱动。
