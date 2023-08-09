@@ -79,9 +79,7 @@ red "我们下次再见，拜拜 "
 rm -rf start.sh
 exit 1
 else
-red "请输入正确的数字，启动对应功能[0-6]: "
-yellow "请输入正确的数字，启动对应功能[0-6]: "
-green "请输入正确的数字，启动对应功能[0-6]: "
+red "****请输入正确的数字，启动对应功能!****"
 fi
 else
 	yum -y install wget
