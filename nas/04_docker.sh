@@ -20,8 +20,10 @@ rm -rf docker-compose-jackett.yaml
 rm -rf docker-compose-nastools_unlock_3.yaml
 
 # 读取输入的目录和需要挂载的容器名
-read -p "请输入你的docker目录: " ip_address1
-read -p "请输入你的video 目录: " ip_address2
+# d1 = /volume1/docker
+# d2 = /volume1/video
+read -p "请输入你的docker目录: " d1
+read -p "请输入你的video 目录: " d2
 
 # 创建docker-compose
 echo "version: '3.3'
@@ -31,8 +33,8 @@ services:
     # ports:
     #  - 3000:3000
     volumes:
-      - $ip_address1/nastools/config-2.9:/config   # 冒号左边请修改为你想保存配置的路径
-      - $ip_address2:/video # 映射数据目录
+      - $d1/nastools/config-2.9:/config   # 冒号左边请修改为你想保存配置的路径
+      - $d2:/video # 映射数据目录
     environment:
       - PUID=0
       - PGID=0
@@ -52,8 +54,8 @@ services:
     # ports:
     #  - 9091:9091
     volumes:
-      - $ip_address1/transmission/config:/config   # 冒号左边请修改为你想保存配置的路径
-      - $ip_address2:/video # 映射数据目录
+      - $d1/transmission/config:/config   # 冒号左边请修改为你想保存配置的路径
+      - $d2:/video # 映射数据目录
     environment:
       - PUID=0
       - PGID=0
@@ -72,8 +74,8 @@ services:
     # ports:
     #  - 8096:8096
     volumes:
-      - $ip_address1/jellyfin:/config   # 冒号左边请修改为你想保存配置的路径
-      - $ip_address2:/video # 映射数据目录
+      - $d1/jellyfin:/config   # 冒号左边请修改为你想保存配置的路径
+      - $d2:/video # 映射数据目录
     environment:
       - PUID=0
       - PGID=0
@@ -92,8 +94,8 @@ services:
     ports:
       - 4000:4000
     volumes:
-      - $ip_address1/Tinymediamanager/data:/data   # 冒号左边请修改为你想保存配置的路径
-      - $ip_address2/硬链接:/media # 映射数据目录
+      - $d1/Tinymediamanager/data:/data   # 冒号左边请修改为你想保存配置的路径
+      - $d2/硬链接:/media # 映射数据目录
     environment:
       - USER_ID=0
       - GROUP_ID=0
@@ -112,8 +114,8 @@ services:
     # ports:
     #  - 3000:3000
     volumes:
-      - $ip_address1/nastools/config-3.2:/config   # 冒号左边请修改为你想保存配置的路径
-      - $ip_address2:/video # 映射数据目录
+      - $d1/nastools/config-3.2:/config   # 冒号左边请修改为你想保存配置的路径
+      - $d2:/video # 映射数据目录
     environment:
       - PUID=0
       - PGID=0
@@ -132,8 +134,8 @@ services:
     # ports:
     #  - 8989:8989
     volumes:
-      - $ip_address1/qbittorrent:/config   # 冒号左边请修改为你想保存配置的路径
-      - $ip_address2:/video # 映射数据目录
+      - $d1/qbittorrent:/config   # 冒号左边请修改为你想保存配置的路径
+      - $d2:/video # 映射数据目录
     environment:
       - UID=0
       - GID=0
@@ -151,7 +153,7 @@ services:
     # ports:
     #  - 9117:9117
     volumes:
-      - $ip_address1/jackett:/config   # 冒号左边请修改为你想保存配置的路径
+      - $d1/jackett:/config   # 冒号左边请修改为你想保存配置的路径
     environment:
       - UID=0
       - GID=0
@@ -168,8 +170,8 @@ services:
     # ports:
     #  - 3000:3000
     volumes:
-      - $ip_address1/nastools/config-unlock:/config   # 冒号左边请修改为你想保存配置的路径
-      - $ip_address2:/video # 映射数据目录
+      - $d1/nastools/config-unlock:/config   # 冒号左边请修改为你想保存配置的路径
+      - $d2:/video # 映射数据目录
     environment:
       - PUID=0
       - PGID=0
@@ -185,8 +187,8 @@ services:
 
 # 确认目录是否正确
 green "==================================================="
-echo -e "你输入的docker目录为: \033[33m$ip_address1\033[0m"
-echo -e "你输入的video 目录为: \033[33m$ip_address2\033[0m"
+echo -e "你输入的docker目录为: \033[33m$d1\033[0m"
+echo -e "你输入的video 目录为: \033[33m$d2\033[0m"
 yellow "1.请确认需安装的文件夹为空白或者没有重复文件夹
 2.请确认目录是否正确"
 read -p "首次安装，须下载配置文件，按 Y 下载：" y2
@@ -205,10 +207,10 @@ else
 fi
 
 # 解压缩文件到docker目录
-tar -zxf docker.tar.gz -C $ip_address1
-tar -zxf video.tar.gz -C $ip_address2
+tar -zxf docker.tar.gz -C $d1
+tar -zxf video.tar.gz -C $d2
 # 输出解压缩成功的提示
-if [ -d "$ip_address1/nastool" -o -d "$ip_address2/源文件" ]; then
+if [ -d "$d1/nastool" -o -d "$d2/源文件" ]; then
     yellow "解压缩成功，文件已经存储docker目录中"
     rm -rf docker.tar.gz
     rm -rf video.tar.gz
