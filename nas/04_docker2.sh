@@ -12,7 +12,7 @@ yellow() {
 
 # 1.安装nastool
 nastool() {
-    yellow "正在安装01-nastool-bt，请稍后..."
+    yellow "正在安装01-nastool-2.9优化版，请稍后..."
     docker-compose -p nastool -f docker-compose-nastool.yaml up -d
     bash 04_docker2.sh
 }
@@ -86,14 +86,14 @@ jackett() {
 
 # 9.安装nastool-unlock解锁版全部
 nastool325() {
-    yellow "正在安装01-nastool-3.2.5，请稍后..."
+    yellow "正在安装01-nastool-unlock版，请稍后..."
     docker-compose -p nastools_unlock_3 -f docker-compose-nastools_unlock_3.yaml up -d
+    yellow "正在安装02-qb下载器，请稍后..."
+    docker-compose -p qb -f docker-compose-qb.yaml up -d
     yellow "正在安装05-jackett资源池，请稍后..."
     docker-compose -p jackett -f docker-compose-jackett.yaml up -d
     yellow "正在安装03-jellyfin播放器，请稍后..."
     docker-compose -p jellyfin -f docker-compose-jellyfin.yaml up -d
-    yellow "正在安装02-qb下载器，请稍后..."
-    docker-compose -p qb -f docker-compose-qb.yaml up -d
     yellow "正在安装04-tmm搜刮器，请稍后..."
     docker-compose -p tmm -f docker-compose-tmm.yaml up -d
     yellow "正在安装02-tr下载器，请稍后..."
@@ -116,7 +116,7 @@ rm_sh() {
 }
 
 echo " ===================================================== "
-yellow "已经全部修复好大和岛，豆瓣图片问题"
+yellow "已修复好大和岛域名、豆瓣图片问题"
 green "
 1.NasTool_v2.9.1_优化版
 2.TR下载器
