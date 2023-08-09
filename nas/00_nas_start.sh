@@ -112,9 +112,8 @@ elif [  $num  == 6  ]; then
 elif [  $num  == 99  ]; then
     rm_images_container
 elif [  $num  == 0  ]; then
-	rm -rf 00_nas_start.sh
 	red "我们下次再见，拜拜"
-	exit 1
+	exit 1 && rm -rf 00_nas_start.sh
 else
 	red "****输入错误！请输入正确的数字，启动对应功能！****"
 fi
