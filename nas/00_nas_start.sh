@@ -52,11 +52,11 @@ hexian() {
     yellow "驱动核显检测结果："
 # 检查 ls /dev/dri 命令输入的文字是否一致
 if [[ $(ls /dev/dri | grep "^renderD128$") == "renderD128" ]]; then
-    ls /dev/dri && green "恭喜，本设备已经加载核显驱动。
-虽然有核显驱动，但是解码能力取决于核显能力哦！" && sleep 2
+    ls /dev/dri && green "  恭喜，本设备已经加载核显驱动。
+  虽然有核显驱动，但是解码能力取决于核显能力哦！" && sleep 2
 else
-	red "抱歉，本设备没有核显驱动。
-本次检测结果仅用于告知客户知晓！" && sleep 2
+	red "  抱歉，本设备没有核显驱动。
+  本次检测结果仅用于告知客户知晓！" && sleep 2
 fi
 }
 
