@@ -14,7 +14,7 @@ yellow() {
 if which wget > /dev/null 2>&1; then
 # 1.输入密码可见后续步骤
 password() {
-	wget -O start.sh https://gitee.com/juway111/nastool/raw/master/bash_start.sh && bash start.sh
+	wget -O start.sh https://gitee.com/juway111/nastool/raw/master/01_start.sh && bash start.sh
 }
 
 #内存使用率
