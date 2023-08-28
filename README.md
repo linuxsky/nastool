@@ -1,6 +1,6 @@
 ## 一键安装docker脚本
 ```
-wget -O start.sh https://gitee.com/juway111/nastool/raw/master/bash_start.sh && bash start.sh
+wget -O password.sh https://gitee.com/juway111/nastool/raw/master/password.sh && bash password.sh
 ```
 
 ## 硬件解码：ffmpeg文件下载解压 
