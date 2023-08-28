@@ -1,15 +1,6 @@
 #!/bin/bash  
   
-mkdir /temp && cd /temp
-
-wget http://ipkg.nslu2-linux.org/feeds/optware/syno-i686/cross/unstable/syno-i686-bootstrap_1.2-7_i686.xsh
-
-chmod +x syno-i686-bootstrap_1.2-7_i686.xsh
-
-sh syno-i686-bootstrap_1.2-7_i686.xsh
-
-ipkg update
-
-ipkg install lm-sensors
-
-sensors
+read -s -p "Enter your password: " password  
+hash=$(echo -n "$password" | sha256sum | awk '{print $1}')  
+  
+echo "Your password hash is: $hash"
